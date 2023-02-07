@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "vitest",
-    "test:coverage": "vitest --coverage"
+    "test:coverage": "vitest --coverage",
+    "build": "rm -rf dist && npx tsc"
   },
   "keywords": [],
   "author": "",
