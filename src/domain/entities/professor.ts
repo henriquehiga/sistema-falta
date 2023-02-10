@@ -1,12 +1,6 @@
 import { Either, left, right } from "../../shared/either";
 import { ErrorResponse } from "../../shared/error-response";
-
-export interface ProfessorProps {
-  id: string;
-  nome: string;
-  email: string;
-  disciplina: string;
-}
+import { ProfessorModel } from "./models/professor-model";
 
 interface ValidateProfessorPropsResponse {
   campo?: string;
@@ -15,9 +9,9 @@ interface ValidateProfessorPropsResponse {
 }
 
 export class Professor {
-  private constructor(private readonly _props: ProfessorProps) {}
+  private constructor(private readonly _props: ProfessorModel.Model) {}
 
-  static create(props: ProfessorProps): Either<ErrorResponse, Professor> {
+  static create(props: ProfessorModel.Model): Either<ErrorResponse, Professor> {
     const propsValidas = this.validate(props);
     if (!propsValidas.valido) {
       return left({
@@ -35,7 +29,7 @@ export class Professor {
     id,
     nome,
     email,
-  }: ProfessorProps): ValidateProfessorPropsResponse {
+  }: ProfessorModel.Model): ValidateProfessorPropsResponse {
     if (nome.length < 3 || nome.length > 64) {
       return {
         campo: "nome",
