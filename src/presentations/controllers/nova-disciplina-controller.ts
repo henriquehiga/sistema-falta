@@ -2,7 +2,7 @@ import { NovaDisciplina } from "../../domain/usecases/nova-disciplina";
 import { Controller } from "../protocols/controller";
 import { HttpRequest, HttpResponse } from "../protocols/http";
 
-export class NovaMateriaController implements Controller {
+export class NovaDisciplinaController implements Controller {
   constructor(private readonly usecase: NovaDisciplina) {}
 
   async handle(data: HttpRequest): Promise<HttpResponse> {
