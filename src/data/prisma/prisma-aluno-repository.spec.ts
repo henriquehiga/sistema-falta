@@ -25,7 +25,7 @@ const makeSut = (): SutTypes => {
     async salvar(data: AlunoModel.Model): Promise<AlunoModel.Model> {
       try {
         const created = await stubPrismaClient().aluno.create({
-          data: data,
+          data,
         });
         return created;
       } catch (err) {
