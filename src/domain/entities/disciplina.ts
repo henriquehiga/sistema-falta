@@ -23,6 +23,10 @@ export class Disciplina {
     return right(new Disciplina(props));
   }
 
+  get props() {
+    return this._props;
+  }
+
   static validate({
     id,
     nome,
