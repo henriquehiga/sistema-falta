@@ -1,4 +1,4 @@
-import { NovoAlunoUsecaseProtocol } from "./../../domain/usecases/protocols/novo-aluno-usecase-protocol";
+import { NovoAlunoUsecaseProtocol } from "../../domain/usecases/protocols/novo-aluno-usecase-protocol";
 import { Controller } from "../protocols/controller";
 import { HttpRequest, HttpResponse } from "../protocols/http";
 
