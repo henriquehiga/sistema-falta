@@ -26,7 +26,7 @@ export class NovoProfessor implements NovoProfessorUsecaseProtocol {
       });
     }
     try {
-      this.repository.salvar(professorOrError.value.props);
+      await this.repository.salvar(professorOrError.value.props);
       return right(professorOrError.value.props);
     } catch (error) {
       return left({
