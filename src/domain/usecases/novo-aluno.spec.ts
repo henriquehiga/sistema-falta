@@ -73,6 +73,6 @@ test("espero retornar erro caso a persistencia falhe", async () => {
   });
   const error = (await sut.execute(data)).value as ErrorResponse;
   expect(error.msg).toEqual(
-    "Erro ao salvar aluno na base: Error: Esse aluno já existe na base!"
+    "Erro ao salvar aluno: Error: Esse aluno já existe na base!"
   );
 });
