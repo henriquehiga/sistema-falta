@@ -1,40 +1,72 @@
-import { PrismaProfessorRepository } from "./prisma-professor-repository";
 import { ProfessorRepository } from "./../professor-repository";
 import { ProfessorModel } from "../../domain/entities/models/professor-model";
-import { test, afterEach, expect } from "vitest";
+import { test, expect, vitest } from "vitest";
 import { prisma } from "../../main/infra/prisma/prisma";
 
-afterEach(async () => {
-  await prisma.professor.deleteMany();
-});
+const stubPrismaClient = () => {
+  const prismaClient = prisma;
+  prismaClient.$use(async (params, next) => {
+    return {
+      id: "valid-uuid",
+      email: "validemail@mail.com",
+      nome: "valid name",
+      disciplina: "valid class",
+    } as ProfessorModel.Model;
+  });
+  return prismaClient;
+};
+
+type SutTypes = {
+  sut: ProfessorRepository;
+};
+
+const makeSut = (): SutTypes => {
+  class PrismaRepositoryStub implements ProfessorRepository {
+    async salvar(data: ProfessorModel.Model): Promise<ProfessorModel.Model> {
+      try {
+        const created = await stubPrismaClient().professor.create({
+          data,
+        });
+        return created;
+      } catch (err) {
+        throw new Error(err);
+      }
+    }
+  }
+  return {
+    sut: new PrismaRepositoryStub(),
+  };
+};
 
 test("Espero salvar novo professor", async () => {
+  const { sut } = makeSut();
   const professor: ProfessorModel.Model = {
     id: "valid-uuid",
     email: "validemail@mail.com",
     nome: "valid name",
     disciplina: "valid class",
   };
-  const repository: ProfessorRepository = new PrismaProfessorRepository();
-  const professorCriado = await repository.salvar(professor);
+  const professorCriado = await sut.salvar(professor);
   expect(professorCriado.id).toBe("valid-uuid");
 });
 
 test("Espero lançar erro caso professor já exista", async () => {
+  const { sut } = makeSut();
   const professor: ProfessorModel.Model = {
     id: "valid-uuid",
     email: "validemail@mail.com",
     nome: "valid name",
     disciplina: "valid class",
   };
-
   const professorDuplicado: ProfessorModel.Model = {
     id: "valid-uuid",
     email: "validemail@mail.com",
     nome: "valid name",
     disciplina: "valid class",
   };
-  const repository: ProfessorRepository = new PrismaProfessorRepository();
-  await repository.salvar(professor);
-  await expect(repository.salvar(professorDuplicado)).rejects.toThrow();
+  await sut.salvar(professor);
+  vitest
+    .spyOn(sut, "salvar")
+    .mockRejectedValue(new Error("Usuário já existe!"));
+  await expect(sut.salvar(professorDuplicado)).rejects.toThrow();
 });

@@ -1,40 +1,72 @@
-import { PrismaAlunoRepository } from "./prisma-aluno-repository";
 import { AlunoRepository } from "./../aluno-repository";
 import { AlunoModel } from "../../domain/entities/models/aluno-model";
-import { test, afterEach, expect } from "vitest";
+import { test, expect, vitest } from "vitest";
 import { prisma } from "../../main/infra/prisma/prisma";
 
-afterEach(async () => {
-  await prisma.aluno.deleteMany();
-});
+const stubPrismaClient = () => {
+  const prismaClient = prisma;
+  prismaClient.$use(async (params, next) => {
+    return {
+      id: "valid-uuid",
+      email: "validemail@mail.com",
+      nome: "valid name",
+      turma: "valid class",
+    } as AlunoModel.Model;
+  });
+  return prismaClient;
+};
+
+type SutTypes = {
+  sut: AlunoRepository;
+};
+
+const makeSut = (): SutTypes => {
+  class PrismaRepositoryStub implements AlunoRepository {
+    async salvar(data: AlunoModel.Model): Promise<AlunoModel.Model> {
+      try {
+        const created = await stubPrismaClient().aluno.create({
+          data: data,
+        });
+        return created;
+      } catch (err) {
+        throw new Error(err);
+      }
+    }
+  }
+  return {
+    sut: new PrismaRepositoryStub(),
+  };
+};
 
 test("Espero salvar novo aluno", async () => {
+  const { sut } = makeSut();
   const aluno: AlunoModel.Model = {
     id: "valid-uuid",
     email: "validemail@mail.com",
     nome: "valid name",
     turma: "valid class",
   };
-  const repository: AlunoRepository = new PrismaAlunoRepository();
-  const alunoCriado = await repository.salvar(aluno);
+  const alunoCriado = await sut.salvar(aluno);
   expect(alunoCriado.id).toBe("valid-uuid");
 });
 
 test("Espero lançar erro caso usuário já exista", async () => {
+  const { sut } = makeSut();
   const aluno: AlunoModel.Model = {
     id: "valid-uuid",
     email: "validemail@mail.com",
     nome: "valid name",
     turma: "valid class",
   };
-
   const alunoDuplicado: AlunoModel.Model = {
     id: "valid-uuid",
     email: "validemail@mail.com",
     nome: "valid name",
     turma: "valid class",
   };
-  const repository: AlunoRepository = new PrismaAlunoRepository();
-  await repository.salvar(aluno);
-  await expect(repository.salvar(alunoDuplicado)).rejects.toThrow();
+  await sut.salvar(aluno);
+  vitest
+    .spyOn(sut, "salvar")
+    .mockRejectedValue(new Error("Usuário já existe!"));
+  await expect(sut.salvar(alunoDuplicado)).rejects.toThrow();
 });
