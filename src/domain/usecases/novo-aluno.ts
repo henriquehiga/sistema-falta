@@ -27,7 +27,7 @@ export class NovoAluno implements NovoAlunoUsecaseProtocol {
       return right(alunoOrError.value.props);
     } catch (error) {
       return left({
-        msg: "Erro ao salvar aluno na base: " + error,
+        msg: "Erro ao salvar aluno: " + error,
       });
     }
   }
