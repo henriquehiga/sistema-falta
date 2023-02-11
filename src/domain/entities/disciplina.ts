@@ -1,30 +1,32 @@
 import { Either, left, right } from "../../shared/either";
 import { ErrorResponse } from "../../shared/error-response";
-import { MateriaModel } from "./models/materia-model";
+import { DisciplinaModel } from "./models/disciplina-model";
 
-interface ValidateMateriaPropsResponse {
+interface ValidateDisciplinaPropsResponse {
   campo?: string;
   erro?: string;
   valido: boolean;
 }
 
-export class Materia {
-  private constructor(private readonly _props: MateriaModel.Model) {}
+export class Disciplina {
+  private constructor(private readonly _props: DisciplinaModel.Model) {}
 
-  static create(props: MateriaModel.Model): Either<ErrorResponse, Materia> {
+  static create(
+    props: DisciplinaModel.Model
+  ): Either<ErrorResponse, Disciplina> {
     const propsValidas = this.validate(props);
     if (!propsValidas.valido) {
       return left({
         msg: propsValidas.erro,
       });
     }
-    return right(new Materia(props));
+    return right(new Disciplina(props));
   }
 
   static validate({
     id,
     nome,
-  }: MateriaModel.Model): ValidateMateriaPropsResponse {
+  }: DisciplinaModel.Model): ValidateDisciplinaPropsResponse {
     if (!id) {
       return {
         campo: "id",
