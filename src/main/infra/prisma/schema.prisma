@@ -23,7 +23,6 @@ model Professor {
   id         String @id
   nome       String
   email      String @unique
-  disciplina String
 
   @@map("professor")
 }

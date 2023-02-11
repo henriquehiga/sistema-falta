@@ -29,7 +29,6 @@ describe("Novo professor usecase", () => {
     const { sut } = makeSut();
     const professorData: ProfessorModel.Create = {
       nome: "",
-      disciplina: "valid disciplina",
       email: "valid@email.com",
     };
     const error = (await sut.execute(professorData)).value as ErrorResponse;
@@ -42,7 +41,6 @@ describe("Novo professor usecase", () => {
     const { sut, repository } = makeSut();
     const data: ProfessorModel.Create = {
       nome: "valid name",
-      disciplina: "valid disciplina",
       email: "valid@email.com",
     };
     vitest.spyOn(repository, "salvar").mockImplementation(() => {

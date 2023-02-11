@@ -10,7 +10,6 @@ const stubPrismaClient = () => {
       id: "valid-uuid",
       email: "validemail@mail.com",
       nome: "valid name",
-      disciplina: "valid class",
     } as ProfessorModel.Model;
   });
   return prismaClient;
@@ -44,7 +43,6 @@ test("Espero salvar novo professor", async () => {
     id: "valid-uuid",
     email: "validemail@mail.com",
     nome: "valid name",
-    disciplina: "valid class",
   };
   const professorCriado = await sut.salvar(professor);
   expect(professorCriado.id).toBe("valid-uuid");
@@ -56,13 +54,11 @@ test("Espero lançar erro caso professor já exista", async () => {
     id: "valid-uuid",
     email: "validemail@mail.com",
     nome: "valid name",
-    disciplina: "valid class",
   };
   const professorDuplicado: ProfessorModel.Model = {
     id: "valid-uuid",
     email: "validemail@mail.com",
     nome: "valid name",
-    disciplina: "valid class",
   };
   await sut.salvar(professor);
   vitest
