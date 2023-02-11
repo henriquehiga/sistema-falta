@@ -23,11 +23,11 @@ export class NovoAluno implements NovoAlunoUsecaseProtocol {
       });
     }
     try {
-      this.repository.salvar(alunoOrError.value.props);
+      await this.repository.salvar(alunoOrError.value.props);
       return right(alunoOrError.value.props);
     } catch (error) {
       return left({
-        msg: "Erro ao salvar aluno: " + error.message,
+        msg: "Erro ao salvar aluno na base: " + error,
       });
     }
   }
