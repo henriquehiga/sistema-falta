@@ -15,7 +15,7 @@ export class NovoAlunoController implements Controller {
       };
     }
     return {
-      body: null,
+      body: response.value,
       statusCode: 201,
     };
   }
