@@ -7,5 +7,5 @@ export namespace PresencaAlunoModel {
     presenca: number;
   };
 
-  export type Create = PresencaAlunoModel.Model;
+  export type Create = Omit<PresencaAlunoModel.Model, "id">;
 }
