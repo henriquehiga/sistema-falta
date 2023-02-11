@@ -1,8 +1,5 @@
 import { Either, left, right } from "../../shared/either";
 import { ErrorResponse } from "../../shared/error-response";
-import { Aluno } from "../entities/aluno";
-import { AlunoModel } from "../entities/models/aluno-model";
-import { NovoAlunoUsecaseProtocol } from "./protocols/novo-aluno-usecase-protocol";
 import { Uuid } from "../../libs/uuid";
 import { ProfessorModel } from "../entities/models/professor-model";
 import { Professor } from "../entities/professor";
