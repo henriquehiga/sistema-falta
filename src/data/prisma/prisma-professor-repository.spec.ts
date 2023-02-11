@@ -1,10 +1,10 @@
 import { PrismaProfessorRepository } from "./prisma-professor-repository";
 import { ProfessorRepository } from "./../professor-repository";
 import { ProfessorModel } from "../../domain/entities/models/professor-model";
-import { test, beforeEach, expect } from "vitest";
+import { test, afterEach, expect } from "vitest";
 import { prisma } from "../../main/infra/prisma/prisma";
 
-beforeEach(async () => {
+afterEach(async () => {
   await prisma.professor.deleteMany();
 });
 

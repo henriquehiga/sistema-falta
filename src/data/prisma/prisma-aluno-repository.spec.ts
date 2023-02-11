@@ -1,10 +1,10 @@
 import { PrismaAlunoRepository } from "./prisma-aluno-repository";
 import { AlunoRepository } from "./../aluno-repository";
 import { AlunoModel } from "../../domain/entities/models/aluno-model";
-import { test, beforeEach, expect } from "vitest";
+import { test, afterEach, expect } from "vitest";
 import { prisma } from "../../main/infra/prisma/prisma";
 
-beforeEach(async () => {
+afterEach(async () => {
   await prisma.aluno.deleteMany();
 });
 
