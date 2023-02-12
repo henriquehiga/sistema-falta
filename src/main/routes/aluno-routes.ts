@@ -1,5 +1,5 @@
 import { adaptRoute } from "../adapters/express-route-adapter";
-import { makeNovoAlunoController } from "./../factories/novo-aluno-controller-factory";
+import { makeNovoAlunoController } from "../factories/nova-disciplina-controller-factory";
 import { Router } from "express";
 
 export default (router: Router) => {
