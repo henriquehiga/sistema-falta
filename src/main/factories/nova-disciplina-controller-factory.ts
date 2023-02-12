@@ -1,4 +1,4 @@
-import { PrismaDisciplinaRepository } from "../../data/prisma/disciplina-repository";
+import { PrismaDisciplinaRepository } from "../../data/prisma/prisma-disciplina-repository";
 import { NovaDisciplina } from "../../domain/usecases/nova-disciplina";
 import { NovaDisciplinaController } from "../../presentations/controllers/nova-disciplina-controller";
 import { Controller } from "../../presentations/protocols/controller";
