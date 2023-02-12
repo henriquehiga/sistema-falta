@@ -4,8 +4,9 @@ import { Uuid } from "../../libs/uuid";
 import { DisciplinaRepository } from "../../data/disciplina-repository";
 import { DisciplinaModel } from "../entities/models/disciplina-model";
 import { Disciplina } from "../entities/disciplina";
+import { NovaDisciplinaUsecaseProtocol } from "./protocols/nova-disciplina-usecase-protocol";
 
-export class NovaDisciplina {
+export class NovaDisciplina implements NovaDisciplinaUsecaseProtocol {
   constructor(private readonly repository: DisciplinaRepository) {}
 
   async execute(
