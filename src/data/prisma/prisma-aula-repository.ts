@@ -15,4 +15,23 @@ export class PrismaAulaRepository implements AulaRepository {
       throw new Error(err);
     }
   }
+
+  async professorIdPorDiscilpinaId(
+    professor_id: string,
+    disciplina_id: string
+  ): Promise<AulaModel.Model> {
+    try {
+      const found = await this.prisma.aula.findFirst({
+        where: {
+          disciplina_id,
+          AND: {
+            professor_id,
+          },
+        },
+      });
+      return found;
+    } catch (err) {
+      throw new Error(err);
+    }
+  }
 }

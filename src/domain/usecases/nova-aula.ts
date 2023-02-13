@@ -45,6 +45,16 @@ export class NovaAula implements NovaAulaUsecaseProtocol {
           msg: "A disciplina com id: [" + data.disciplina_id + "] não existe.",
         });
       }
+      let disciplinaComProfessorJaExiste =
+        await this.aulaRepo.professorIdPorDiscilpinaId(
+          data.professor_id,
+          data.disciplina_id
+        );
+      if (disciplinaComProfessorJaExiste) {
+        return left({
+          msg: "A AULA recebida já existe com essas informações!",
+        });
+      }
       await this.aulaRepo.salvar(aulaOrError.value.props);
       return right(aulaOrError.value.props);
     } catch (error) {
