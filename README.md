@@ -13,9 +13,10 @@ Este projeto tem como objetivo desenvolver um sistema de gerenciamento de faltas
 Para executar o projeto, é necessário clonar o repositório e instalar as dependências.
 
 ```
-git clone https://github.com/seu-usuario/sistema-de-faltas.git
-cd sistema-de-faltas
+git clone https://github.com/codehiga/sistema-falta.git
+cd sistema-falta
 npm install
+npm run start
 ```
 
 # Uso
