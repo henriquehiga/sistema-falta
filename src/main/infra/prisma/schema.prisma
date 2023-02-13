@@ -39,3 +39,11 @@ model Falta {
 
   @@map("falta")
 }
+
+model Aula {
+  id            String @id
+  professor_id  String
+  disciplina_id String
+
+  @@map("aula")
+}
