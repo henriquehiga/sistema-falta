@@ -28,4 +28,17 @@ export class PrismaFaltaRepository implements FaltaRepository {
       throw new Error(err);
     }
   }
+
+  async resgataPorIdAluno(id: string): Promise<FaltaModel.Model[]> {
+    try {
+      let found = await this.prisma.falta.findMany({
+        where: {
+          aluno_id: id,
+        },
+      });
+      return found;
+    } catch (err) {
+      throw new Error(err);
+    }
+  }
 }
