@@ -11,7 +11,7 @@ Este projeto tem como objetivo desenvolver um sistema de gerenciamento de faltas
 
 # Documentação
 
-Os arquivos da documentação deste projeto estão na pasta [/docs](/docs), e o seu conteúdo é publicado em **[https://&lt;usuario&gt;.github.io/ppads-2023s1](https://codehiga.github.io/sistema-falta/)**.
+Os arquivos da documentação deste projeto estão na pasta [/docs](/docs), e o seu conteúdo é publicado em **[https://codehiga.github.io/sistema-falta/](https://codehiga.github.io/sistema-falta/)**.
 
 # Releases
 
