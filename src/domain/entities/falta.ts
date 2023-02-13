@@ -41,7 +41,7 @@ export class Falta {
       return {
         valido: false,
         campo: "disciplina_id",
-        erro: "É obrigatório o campo ALUNO_ID",
+        erro: "É obrigatório o campo DISCIPLINA_ID",
       };
     }
     if (!id) {
