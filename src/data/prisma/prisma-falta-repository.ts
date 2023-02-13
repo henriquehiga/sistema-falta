@@ -15,4 +15,17 @@ export class PrismaFaltaRepository implements FaltaRepository {
       throw new Error(err);
     }
   }
+
+  async resgataPorId(id: string): Promise<FaltaModel.Model> {
+    try {
+      const found = await this.prisma.falta.findFirst({
+        where: {
+          id,
+        },
+      });
+      return found;
+    } catch (err) {
+      throw new Error(err);
+    }
+  }
 }

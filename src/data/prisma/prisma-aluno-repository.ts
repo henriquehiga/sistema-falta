@@ -15,4 +15,17 @@ export class PrismaAlunoRepository implements AlunoRepository {
       throw new Error(err);
     }
   }
+
+  async resgataPorId(id: string): Promise<AlunoModel.Model> {
+    try {
+      const found = await this.prisma.aluno.findFirst({
+        where: {
+          id,
+        },
+      });
+      return found;
+    } catch (err) {
+      throw new Error(err);
+    }
+  }
 }
