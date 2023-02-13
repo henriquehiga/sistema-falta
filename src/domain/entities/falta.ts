@@ -27,7 +27,7 @@ export class Falta {
 
   static validate({
     aluno_id,
-    disciplina_id,
+    aula_id,
     id,
   }: FaltaModel.Model): ValidateFaltaPropsResponse {
     if (!aluno_id) {
@@ -37,11 +37,11 @@ export class Falta {
         erro: "É obrigatório o campo ALUNO_ID",
       };
     }
-    if (!disciplina_id) {
+    if (!aula_id) {
       return {
         valido: false,
-        campo: "disciplina_id",
-        erro: "É obrigatório o campo DISCIPLINA_ID",
+        campo: "aula_id",
+        erro: "É obrigatório o campo AULA_ID",
       };
     }
     if (!id) {

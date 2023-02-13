@@ -32,10 +32,10 @@ model Disciplina {
 }
 
 model Falta {
-  id            String   @id
-  aluno_id      String
-  disciplina_id String
-  data          DateTime
+  id       String   @id
+  aluno_id String
+  aula_id  String
+  data     DateTime
 
   @@map("falta")
 }
