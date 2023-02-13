@@ -11,7 +11,8 @@
     "prisma:push": "npx prisma db push",
     "prisma:fmt": "npx prisma format",
     "prisma:studio": "npx prisma studio",
-    "prisma:build": "npm run prisma:gen && npm run prisma:push && npm run prisma:fmt && npm run prisma:studio",
+    "prisma:build": "npm run prisma:gen && npm run prisma:push && npm run prisma:fmt",
+    "prisma:build:view": "npm run prisma:gen && npm run prisma:push && npm run prisma:fmt && npm run prisma:studio",
     "dev": "nodemon src/main/server.ts",
     "start": "npm run build && node dist/main/server.js"
   },
