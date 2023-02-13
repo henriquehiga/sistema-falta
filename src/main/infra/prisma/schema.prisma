@@ -17,16 +17,25 @@ model Aluno {
 }
 
 model Professor {
-  id         String @id
-  nome       String
-  email      String @unique
+  id    String @id
+  nome  String
+  email String @unique
 
   @@map("professor")
 }
 
 model Disciplina {
-  id         String @id
-  nome       String @unique
+  id   String @id
+  nome String @unique
 
   @@map("disciplina")
+}
+
+model Falta {
+  id            String   @id
+  aluno_id      String
+  disciplina_id String
+  data          DateTime
+
+  @@map("falta")
 }
