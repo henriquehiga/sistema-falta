@@ -15,4 +15,17 @@ export class PrismaProfessorRepository implements ProfessorRepository {
       throw new Error(err);
     }
   }
+
+  async resgataPorId(id: string): Promise<ProfessorModel.Model> {
+    try {
+      const found = await this.prisma.professor.findFirst({
+        where: {
+          id,
+        },
+      });
+      return found;
+    } catch (err) {
+      throw new Error(err);
+    }
+  }
 }

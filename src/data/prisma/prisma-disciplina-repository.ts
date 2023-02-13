@@ -15,4 +15,17 @@ export class PrismaDisciplinaRepository implements DisciplinaRepository {
       throw new Error(err);
     }
   }
+
+  async resgataPorId(id: string): Promise<DisciplinaModel.Model> {
+    try {
+      const found = await this.prisma.disciplina.findFirst({
+        where: {
+          id,
+        },
+      });
+      return found;
+    } catch (err) {
+      throw new Error(err);
+    }
+  }
 }
