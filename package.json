@@ -7,6 +7,9 @@
     "test": "vitest",
     "test:coverage": "vitest --coverage",
     "build": "rm -rf dist && npx tsc",
+    "prisma:gen": "npx prisma generate",
+    "prisma:push": "npx prisma db push",
+    "prisma:fmt": "npx prisma format",
     "dev": "nodemon src/main/server.ts",
     "start": "npm run build && node dist/main/server.js"
   },
