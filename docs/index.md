@@ -6,10 +6,6 @@ _&lt;Sistema faltas&gt;_
 
 </center></font>
 
-> _Observação 1: A estrutura inicial deste documento é só um exemplo. O seu grupo deverá alterar esta estrutura de acordo com o que está sendo solicitado na disciplina._
-
-> _Observação 2: O índice abaixo não precisa ser editado se você utilizar o Visual Studio Code com a extensão **Markdown All in One**. Essa extensão atualiza o índice automaticamente quando o arquivo é salvo._
-
 **Conteúdo**
 
 - [Autores](#autores)
@@ -24,18 +20,11 @@ _&lt;Sistema faltas&gt;_
 
 # Autores
 
-- Aluno 1
-- Aluno 2
-- Aluno 3
-- Aluno 4
-- Aluno 5
-- Aluno 6
-- Aluno 7
-- Aluno 8
+- Henrique Yoshimitsu Nagata Higa (32154021)
 
 # Descrição do projeto
 
-_&lt;Descrição do projeto&gt;_
+Este projeto tem como objetivo desenvolver um sistema de gerenciamento de faltas para uma escola. O sistema permitirá que professores registrem faltas de forma fácil e intuitiva, gerar relatórios agrupados por data, ano do ensino, turma, professor, disciplina ou aluno, e enviar notificações por e-mail para pais ou responsáveis em caso de faltas excessivas. Além disso, o sistema será acessível a todos os usuários, incluindo pessoas com deficiências, e será acessível a partir de qualquer navegador web, inclusive em dispositivos móveis.
 
 # Diagrama de casos de uso
 
