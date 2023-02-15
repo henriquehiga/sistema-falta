@@ -16,7 +16,7 @@ export class ResgataFaltasAlunoController implements Controller {
     }
     return {
       body: response.value,
-      statusCode: 201,
+      statusCode: 200,
     };
   }
 }
