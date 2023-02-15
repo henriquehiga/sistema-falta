@@ -28,7 +28,7 @@ export class Aluno {
   static validate({
     id,
     nome,
-    email,
+    email_responsavel,
   }: AlunoModel.Model): ValidateAlunoPropsResponse {
     if (nome.length < 3 || nome.length > 64) {
       return {
@@ -37,17 +37,17 @@ export class Aluno {
         valido: false,
       };
     }
-    if (email.length < 3 || email.length > 64) {
+    if (email_responsavel.length < 3 || email_responsavel.length > 64) {
       return {
-        campo: "email",
-        erro: "A quantidade de caracteres no EMAIL deve ser entre 3 e 64",
+        campo: "email_responsavel",
+        erro: "A quantidade de caracteres no EMAIL_RESPONSAVEL deve ser entre 3 e 64",
         valido: false,
       };
     }
-    if (!email.includes("@") || !email.includes(".")) {
+    if (!email_responsavel.includes("@") || !email_responsavel.includes(".")) {
       return {
-        campo: "email",
-        erro: "Por favor forneça um e-mail válido",
+        campo: "email_responsavel",
+        erro: "Por favor forneça um e-mail válido do responsável",
         valido: false,
       };
     }

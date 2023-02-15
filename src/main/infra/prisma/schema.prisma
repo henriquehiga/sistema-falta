@@ -8,10 +8,10 @@ datasource db {
 }
 
 model Aluno {
-  id    String @id
-  nome  String
-  email String @unique
-  turma String
+  id                String @id
+  nome              String @unique
+  email_responsavel String
+  turma             String
 
   @@map("aluno")
 }
