@@ -1,5 +1,6 @@
 import { AlunoRepository } from "../../data/aluno-repository";
 import { AulaRepository } from "../../data/aula-repository";
+import { DisciplinaRepository } from "../../data/disciplina-repository";
 import { FaltaRepository } from "../../data/falta-repository";
 import { Uuid } from "../../libs/uuid";
 import { Either, left, right } from "../../shared/either";
@@ -7,12 +8,15 @@ import { ErrorResponse } from "../../shared/error-response";
 import { Falta } from "../entities/falta";
 import { FaltaModel } from "../entities/models/falta-model";
 import { NovaFaltaUsecaseProtocol } from "./protocols/nova-falta-usecase-protocol";
+import { ResgataFaltasAlunoUsecaseProtocol } from "./protocols/resgata-faltas-aluno-protocol";
 
 export class NovaFalta implements NovaFaltaUsecaseProtocol {
   constructor(
     private readonly faltaRepo: FaltaRepository,
     private readonly aulaRepo: AulaRepository,
-    private readonly alunoRepo: AlunoRepository
+    private readonly alunoRepo: AlunoRepository,
+    private readonly disciplinaRepo: DisciplinaRepository,
+    private readonly resgataFaltasAlunoUsecase: ResgataFaltasAlunoUsecaseProtocol
   ) {}
 
   async execute(
@@ -23,11 +27,8 @@ export class NovaFalta implements NovaFaltaUsecaseProtocol {
       const id = Uuid.generate();
       let faltaModel: FaltaModel.Model = {
         id,
+        data: new Date(falta.data),
         ...falta,
-      };
-      faltaModel = {
-        ...faltaModel,
-        data: new Date(faltaModel.data),
       };
       const faltaOrError = Falta.create(faltaModel);
       if (faltaOrError.isLeft()) {
@@ -44,8 +45,29 @@ export class NovaFalta implements NovaFaltaUsecaseProtocol {
         let alunoEncontrado = await this.alunoRepo.resgataPorId(falta.aluno_id);
         if (!alunoEncontrado) {
           return left({
-            msg: "O aluno com id: [" + falta.aula_id + "] não existe.",
+            msg: "O aluno com id: [" + falta.aluno_id + "] não existe.",
           });
+        }
+        const disciplina = await this.disciplinaRepo.resgataPorId(
+          aulaEncontrada.disciplina_id
+        );
+        const faltasAluno = await this.resgataFaltasAlunoUsecase.execute(
+          alunoEncontrado.id
+        );
+        if (faltasAluno.isLeft()) {
+          return left(faltasAluno.value);
+        }
+        let qtdFaltasDisciplinaSemestre: number = 0;
+        faltasAluno.value.forEach((falta) => {
+          if (falta.aula_id == aulaEncontrada.id) {
+            qtdFaltasDisciplinaSemestre += 1;
+          }
+        });
+        let porcentagemCriticaFaltas = disciplina.qtd_aulas * 0.65;
+        if (qtdFaltasDisciplinaSemestre >= porcentagemCriticaFaltas) {
+          console.log(
+            "Perigo! O Aluno possui " + qtdFaltasDisciplinaSemestre + " faltas."
+          );
         }
         faltaPersistida = await this.faltaRepo.salvar(faltaOrError.value.props);
       } catch (err) {

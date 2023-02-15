@@ -25,9 +25,9 @@ model Professor {
 }
 
 model Disciplina {
-  id                 String @id
-  nome               String @unique
-  qtd_aulas_semestre Int
+  id        String @id
+  nome      String @unique
+  qtd_aulas Int
 
   @@map("disciplina")
 }
