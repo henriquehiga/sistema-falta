@@ -14,6 +14,7 @@ export class NovoAluno implements NovoAlunoUsecaseProtocol {
   ): Promise<Either<ErrorResponse, AlunoModel.Model>> {
     const aluno: AlunoModel.Model = {
       id: Uuid.generate(),
+      aprovado: true,
       ...data,
     };
     const alunoOrError = Aluno.create(aluno);
