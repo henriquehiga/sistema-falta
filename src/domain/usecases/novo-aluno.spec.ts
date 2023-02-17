@@ -12,6 +12,9 @@ type sutTypes = {
 
 const makeSut = (): sutTypes => {
   class Repository implements AlunoRepository {
+    resgataPorId(id: string): Promise<AlunoModel.Model> {
+      throw new Error("Method not implemented.");
+    }
     async salvar(data: AlunoModel.Model): Promise<AlunoModel.Model> {
       return data;
     }
@@ -28,7 +31,7 @@ test("espero criar Aluno", async () => {
   const { sut } = makeSut();
   const data: AlunoModel.Create = {
     nome: "Henrique Higa",
-    email: "henriquehiga@hotmail.com",
+    email_responsavel: "henriquehiga@hotmail.com",
     turma: "1A",
   };
   const aluno = (await sut.execute(data)).value as AlunoModel.Model;
@@ -39,7 +42,7 @@ test("espero retornar erro ao criar Aluno sem nome", async () => {
   const { sut } = makeSut();
   const data: AlunoModel.Create = {
     nome: "",
-    email: "henriquehiga@hotmail.com",
+    email_responsavel: "henriquehiga@hotmail.com",
     turma: "1A",
   };
   const error = (await sut.execute(data)).value as ErrorResponse;
@@ -52,12 +55,12 @@ test("espero retornar erro ao criar Aluno sem email válido", async () => {
   const { sut } = makeSut();
   const data: AlunoModel.Create = {
     nome: "Henrique Higa",
-    email: "emailinvalido.com",
+    email_responsavel: "emailinvalido.com",
     turma: "1A",
   };
   const error = (await sut.execute(data)).value as ErrorResponse;
   expect(error.msg).toBe(
-    "Erro ao criar aluno: Por favor forneça um e-mail válido"
+    "Erro ao criar aluno: Por favor forneça um e-mail válido do responsável"
   );
 });
 
@@ -65,7 +68,7 @@ test("espero retornar erro caso a persistencia falhe", async () => {
   const { sut, repository } = makeSut();
   const data: AlunoModel.Create = {
     nome: "Henrique Higa",
-    email: "henriquehiga@hotmail.com",
+    email_responsavel: "henriquehiga@hotmail.com",
     turma: "1A",
   };
   vitest.spyOn(repository, "salvar").mockImplementation(() => {
