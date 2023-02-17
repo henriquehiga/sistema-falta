@@ -61,4 +61,14 @@ describe("Novo professor usecase", () => {
       "Erro ao salvar professor: Esse professor já existe na base!"
     );
   });
+
+  test("Espero criar professor corretamente", async () => {
+    const { sut } = makeSut();
+    const data: ProfessorModel.Create = {
+      nome: "Nome Professor",
+      email: "email@professor.com",
+    };
+    const response = await sut.execute(data);
+    expect(response.isRight()).toBeTruthy();
+  });
 });
