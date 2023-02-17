@@ -10,7 +10,7 @@ datasource db {
 model Aluno {
   id                String  @id
   nome              String  @unique
-  aprovado          Boolean
+  aprovado         Boolean?
   email_responsavel String
   turma             String
 
