@@ -25,6 +25,8 @@ Este projeto tem como objetivo desenvolver um sistema de gerenciamento de faltas
 - Prisma: framework para gerenciamento de banco de dados.
 - Clean Architecture: metodologia utilizada para organização do código do sistema.
 
+## Tecnologias utilizadas
+
 ## Instalação
 
 Para executar o projeto, é necessário clonar o repositório e instalar as dependências.

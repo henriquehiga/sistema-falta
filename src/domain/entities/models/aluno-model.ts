@@ -2,7 +2,7 @@ export namespace AlunoModel {
   export type Model = {
     id: string;
     nome: string;
-    aprovado?: boolean;
+    aprovado?: boolean | null;
     email_responsavel: string;
     turma: string;
   };
