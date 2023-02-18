@@ -11,15 +11,25 @@ type sutTypes = {
 };
 
 const makeSut = (): sutTypes => {
-  class Repository implements ProfessorRepository {
+  class MockProfessorRepository implements ProfessorRepository {
+    async resgataPorId(id: string): Promise<ProfessorModel.Model> {
+      return {
+        id,
+        email: "email@professor.com",
+        nome: "Nome Professor",
+      };
+    }
     async salvar(data: ProfessorModel.Model): Promise<ProfessorModel.Model> {
       return data;
     }
   }
-  const repository = new Repository();
-  const usecase: NovoProfessorUsecaseProtocol = new NovoProfessor(repository);
+  const mockedProfessorRepository: ProfessorRepository =
+    new MockProfessorRepository();
+  const usecase: NovoProfessorUsecaseProtocol = new NovoProfessor(
+    mockedProfessorRepository
+  );
   return {
-    repository,
+    repository: mockedProfessorRepository,
     sut: usecase,
   };
 };
@@ -29,7 +39,7 @@ describe("Novo professor usecase", () => {
     const { sut } = makeSut();
     const professorData: ProfessorModel.Create = {
       nome: "",
-      email: "valid@email.com",
+      email: "email@professor.com",
     };
     const error = (await sut.execute(professorData)).value as ErrorResponse;
     expect(error.msg).toBe(
@@ -40,8 +50,8 @@ describe("Novo professor usecase", () => {
   test("espero retornar erro caso a persistencia falhe", async () => {
     const { sut, repository } = makeSut();
     const data: ProfessorModel.Create = {
-      nome: "valid name",
-      email: "valid@email.com",
+      nome: "Nome Professor",
+      email: "email@professor.com",
     };
     vitest.spyOn(repository, "salvar").mockImplementation(() => {
       throw new Error("Esse professor já existe na base!");
@@ -50,5 +60,15 @@ describe("Novo professor usecase", () => {
     expect(error.msg).toEqual(
       "Erro ao salvar professor: Esse professor já existe na base!"
     );
+  });
+
+  test("Espero criar professor corretamente", async () => {
+    const { sut } = makeSut();
+    const data: ProfessorModel.Create = {
+      nome: "Nome Professor",
+      email: "email@professor.com",
+    };
+    const response = await sut.execute(data);
+    expect(response.isRight()).toBeTruthy();
   });
 });

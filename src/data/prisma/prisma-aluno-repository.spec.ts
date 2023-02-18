@@ -8,7 +8,7 @@ const stubPrismaClient = () => {
   prismaClient.$use(async (params, next) => {
     return {
       id: "valid-uuid",
-      email: "validemail@mail.com",
+      email_responsavel: "validemail@mail.com",
       nome: "valid name",
       turma: "valid class",
     } as AlunoModel.Model;
@@ -22,6 +22,15 @@ type SutTypes = {
 
 const makeSut = (): SutTypes => {
   class PrismaRepositoryStub implements AlunoRepository {
+    async resgataPorId(id: string): Promise<AlunoModel.Model> {
+      return {
+        id,
+        email_responsavel: "email@responsavel.com",
+        nome: "Nome Aluno",
+        turma: "1A",
+        aprovado: true,
+      };
+    }
     async salvar(data: AlunoModel.Model): Promise<AlunoModel.Model> {
       try {
         const created = await stubPrismaClient().aluno.create({
@@ -42,7 +51,7 @@ test("Espero salvar novo aluno", async () => {
   const { sut } = makeSut();
   const aluno: AlunoModel.Model = {
     id: "valid-uuid",
-    email: "validemail@mail.com",
+    email_responsavel: "validemail@mail.com",
     nome: "valid name",
     turma: "valid class",
   };
@@ -54,13 +63,13 @@ test("Espero lançar erro caso usuário já exista", async () => {
   const { sut } = makeSut();
   const aluno: AlunoModel.Model = {
     id: "valid-uuid",
-    email: "validemail@mail.com",
+    email_responsavel: "validemail@mail.com",
     nome: "valid name",
     turma: "valid class",
   };
   const alunoDuplicado: AlunoModel.Model = {
     id: "valid-uuid",
-    email: "validemail@mail.com",
+    email_responsavel: "validemail@mail.com",
     nome: "valid name",
     turma: "valid class",
   };
@@ -69,4 +78,23 @@ test("Espero lançar erro caso usuário já exista", async () => {
     .spyOn(sut, "salvar")
     .mockRejectedValue(new Error("Usuário já existe!"));
   await expect(sut.salvar(alunoDuplicado)).rejects.toThrow();
+});
+
+test("Espero resgatar aluno com dados corretos", async () => {
+  const { sut } = makeSut();
+  const response = await sut.resgataPorId("valid-id");
+  expect(response).toEqual({
+    id: "valid-id",
+    email_responsavel: "email@responsavel.com",
+    nome: "Nome Aluno",
+    turma: "1A",
+    aprovado: true,
+  });
+});
+
+test("Espero retornar nulo caso aluno não exista", async () => {
+  const { sut } = makeSut();
+  vitest.spyOn(sut, "resgataPorId").mockReturnValueOnce(Promise.resolve(null));
+  const response = await sut.resgataPorId("valid-id");
+  expect(response).toEqual(null);
 });

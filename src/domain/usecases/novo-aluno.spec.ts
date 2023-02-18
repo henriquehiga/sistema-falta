@@ -11,15 +11,26 @@ type sutTypes = {
 };
 
 const makeSut = (): sutTypes => {
-  class Repository implements AlunoRepository {
+  class MockAlunoRepository implements AlunoRepository {
+    async resgataPorId(id: string): Promise<AlunoModel.Model> {
+      return {
+        id,
+        email_responsavel: "email@responsavel.com",
+        nome: "Nome Aluno",
+        turma: "1A",
+        aprovado: true,
+      };
+    }
     async salvar(data: AlunoModel.Model): Promise<AlunoModel.Model> {
       return data;
     }
   }
-  const repository = new Repository();
-  const usecase: NovoAlunoUsecaseProtocol = new NovoAluno(repository);
+  const mockedAlunoRepository = new MockAlunoRepository();
+  const usecase: NovoAlunoUsecaseProtocol = new NovoAluno(
+    mockedAlunoRepository
+  );
   return {
-    repository,
+    repository: mockedAlunoRepository,
     sut: usecase,
   };
 };
@@ -27,19 +38,19 @@ const makeSut = (): sutTypes => {
 test("espero criar Aluno", async () => {
   const { sut } = makeSut();
   const data: AlunoModel.Create = {
-    nome: "Henrique Higa",
-    email: "henriquehiga@hotmail.com",
+    nome: "Nome Aluno",
+    email_responsavel: "email@responsavel.com",
     turma: "1A",
   };
   const aluno = (await sut.execute(data)).value as AlunoModel.Model;
-  expect(aluno.nome).toBe("Henrique Higa");
+  expect(aluno.nome).toBe("Nome Aluno");
 });
 
 test("espero retornar erro ao criar Aluno sem nome", async () => {
   const { sut } = makeSut();
   const data: AlunoModel.Create = {
     nome: "",
-    email: "henriquehiga@hotmail.com",
+    email_responsavel: "email@responsavel.com",
     turma: "1A",
   };
   const error = (await sut.execute(data)).value as ErrorResponse;
@@ -51,21 +62,21 @@ test("espero retornar erro ao criar Aluno sem nome", async () => {
 test("espero retornar erro ao criar Aluno sem email válido", async () => {
   const { sut } = makeSut();
   const data: AlunoModel.Create = {
-    nome: "Henrique Higa",
-    email: "emailinvalido.com",
+    nome: "Nome Aluno",
+    email_responsavel: "emailinvalido.com",
     turma: "1A",
   };
   const error = (await sut.execute(data)).value as ErrorResponse;
   expect(error.msg).toBe(
-    "Erro ao criar aluno: Por favor forneça um e-mail válido"
+    "Erro ao criar aluno: Por favor forneça um e-mail válido do responsável"
   );
 });
 
 test("espero retornar erro caso a persistencia falhe", async () => {
   const { sut, repository } = makeSut();
   const data: AlunoModel.Create = {
-    nome: "Henrique Higa",
-    email: "henriquehiga@hotmail.com",
+    nome: "Nome Aluno",
+    email_responsavel: "email@responsavel.com",
     turma: "1A",
   };
   vitest.spyOn(repository, "salvar").mockImplementation(() => {
