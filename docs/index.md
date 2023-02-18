@@ -21,6 +21,7 @@ _&lt;Sistema faltas&gt;_
 # Autores
 
 - Henrique Yoshimitsu Nagata Higa (32154021)
+- Beatriz Vieira Alves (32118929)
 
 # Descrição do projeto
 
@@ -28,7 +29,7 @@ Este projeto tem como objetivo desenvolver um sistema de gerenciamento de faltas
 
 # Diagrama de casos de uso
 
-_&lt;Diagrama de casos de uso&gt;_
+![Diagrama Sistema de Falta](https://user-images.githubusercontent.com/89753145/219883846-bb6a00f0-1be6-4b07-ab15-25a1e9537fc5.jpg)
 
 # Descrição dos casos de uso
 
