@@ -49,11 +49,12 @@ Protótipos de tela&gt;_
 
 # Modelo de domínio
 
-_&lt;Modelo de domínio&gt;_
+![Diagrama sem nome drawio (3)](https://user-images.githubusercontent.com/89232973/221427826-88a8adef-fb3d-47c0-8adb-19c8a626c79e.png)
+
 
 # Decisões de arquitetura
 
-_&lt;Decisões de arquitetura&gt;_
+https://drive.google.com/file/d/1UYexh8rsWUFGc5maEczxs8ZUXRZkHmu_/view?usp=sharing
 
 # Diagrama de implantação
 
