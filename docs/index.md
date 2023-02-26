@@ -23,6 +23,7 @@ _&lt;Sistema faltas&gt;_
 - Henrique Yoshimitsu Nagata Higa (32154021)
 - Beatriz Vieira Alves (32118929)
 - Letícia do Carmo Souza Silva (32157843)
+- Vinícius Figueiredo da Cruz (32148801)
 
 # Descrição do projeto
 
@@ -49,11 +50,12 @@ Protótipos de tela&gt;_
 
 # Modelo de domínio
 
-_&lt;Modelo de domínio&gt;_
+![image](https://user-images.githubusercontent.com/89232973/221427424-b06fd1b0-03c3-418b-aa69-0367d84a64b5.png)
+
 
 # Decisões de arquitetura
 
-_&lt;Decisões de arquitetura&gt;_
+https://drive.google.com/file/d/1UYexh8rsWUFGc5maEczxs8ZUXRZkHmu_/view?usp=sharing
 
 # Diagrama de implantação
 
