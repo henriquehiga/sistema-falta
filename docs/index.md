@@ -23,6 +23,7 @@ _&lt;Sistema faltas&gt;_
 - Henrique Yoshimitsu Nagata Higa (32154021)
 - Beatriz Vieira Alves (32118929)
 - Letícia do Carmo Souza Silva (32157843)
+- Vinícius Figueiredo da Cruz (32148801)
 
 # Descrição do projeto
 
