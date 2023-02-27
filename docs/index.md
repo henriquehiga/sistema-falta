@@ -59,7 +59,7 @@ Protótipos de tela&gt;_
 
 # Decisões de arquitetura
 
-https://drive.google.com/file/d/1UYexh8rsWUFGc5maEczxs8ZUXRZkHmu_/view?usp=sharing
+https://drive.google.com/file/d/1jm985kDqCjPEjCatvQaFqSdnUMlM5xkx/view?usp=share_link
 
 # Diagrama de implantação
 
