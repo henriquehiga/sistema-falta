@@ -50,7 +50,11 @@ Protótipos de tela&gt;_
 
 # Modelo de domínio
 
+<<<<<<< HEAD
 ![image](https://user-images.githubusercontent.com/89232973/221427424-b06fd1b0-03c3-418b-aa69-0367d84a64b5.png)
+=======
+![Diagrama sem nome drawio (3)](https://user-images.githubusercontent.com/89232973/221427826-88a8adef-fb3d-47c0-8adb-19c8a626c79e.png)
+>>>>>>> develop
 
 
 # Decisões de arquitetura
