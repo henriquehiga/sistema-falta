@@ -1,0 +1,34 @@
+.list-students-item:nth-child(odd) {
+    background-color: #f4f4f4;
+  }
+  
+  .list-students-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 19px 26px 18px 33px;
+  }
+  
+  .list-students-item strong {
+    color: #000 !important;
+    font-size: 18px !important;
+    text-transform: uppercase;
+    margin-bottom: 0 !important;
+  }
+  
+  .list-students-item img {
+    transition: 0.3s;
+  }
+  
+  .list-students-item button {
+    background-color: transparent;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .list-students-item button:hover img {
+    opacity: 0.6;
+  }
+  

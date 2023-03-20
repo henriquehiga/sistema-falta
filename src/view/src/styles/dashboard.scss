@@ -1,0 +1,192 @@
+.wrapper {
+    background-color: #f9f9f9;
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .menu {
+    border-right: 1px #e4e4e4 solid;
+    padding: 64px 40px;
+    position: relative;
+    width: 350px;
+  }
+  
+  .menu > div {
+    position: sticky;
+    padding-top: 20px;
+    top: 0;
+  }
+  
+  .menu-user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 34px;
+  }
+  
+  .menu-user::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+    margin-top: 34px;
+    background-color: #e4e4e4;
+  }
+  
+  .menu-user a {
+    margin-bottom: 30px;
+  }
+  
+  .menu-user a img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .menu-user strong {
+    font-size: 22px;
+    color: #3362cc;
+    font-weight: bold;
+    margin-bottom: 0px;
+  }
+  
+  .menu-user p {
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 33px;
+    letter-spacing: 0;
+  }
+  
+  .menu-nav .btn {
+    color: #fff;
+    background-color: #888888;
+    width: 100%;
+  }
+  
+  .menu-nav .btn:hover {
+    background-color: #757575;
+  }
+  
+  .menu-nav li + li {
+    margin-top: 10px;
+  }
+  
+  .menu-nav li a:not(.btn) {
+    text-align: center;
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    padding: 10px 12px;
+  }
+  
+  .info {
+    width: 100%;
+  }
+  
+  .info-top {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    padding: 0 42px;
+    border-bottom: 1px #e4e4e4 solid;
+    width: 100%;
+  }
+  
+  .info-top h1 {
+    color: #3362cc;
+    text-transform: uppercase;
+  }
+  
+  .info-main {
+    padding: 40px 42px 20px;
+  }
+  
+  .info-main strong {
+    display: block;
+    color: #3362cc;
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+  
+  .info-main-subjects ul {
+    display: flex;
+    gap: 6px;
+  }
+  
+  .info-main-students {
+    margin-top: 60px;
+  }
+  
+  .info-main-students ul {
+    margin-top: 60px;
+  }
+  
+  .info-main-students li a {
+    background-color: #ebebeb;
+    border-radius: 6px;
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 17px 30px 18px;
+    display: inline-block;
+  }
+  
+  .info-main-students li a:hover {
+    background-color: #d3d3d3;
+  }
+  
+  .list-students,
+  .list-history {
+    display: flex;
+    flex-direction: column;
+    padding-right: 10px;
+  }
+  
+  .info-main-classes {
+    margin-top: 60px;
+  }
+  
+  /* DETALHES DO ESTUDANTE */
+  .info-main-student {
+    margin-top: 60px;
+  }
+  
+  .info-main-student ul li {
+    padding: 6px 26px 6px 10px;
+  }
+  
+  .info-main-student ul strong {
+    color: #000 !important;
+    font-size: 18px !important;
+    text-transform: uppercase;
+    margin-bottom: 0 !important;
+    display: inline-block;
+  }
+  
+  .info-main-absence-history {
+    margin-top: 60px;
+  }
+  
+  .info-main-absence-history li {
+    padding: 19px 26px 18px 33px;
+  }
+  
+  .info-main-absence-history li:nth-child(odd) {
+    background-color: #f4f4f4;
+  }
+  
+  .info-main-absence-history li p,
+  .info-main-absence-history li strong {
+    color: #000 !important;
+    font-size: 18px !important;
+    text-transform: uppercase;
+    margin-bottom: 0 !important;
+  }
+  
+  .info-main-absence-history li strong {
+    display: inline-block;
+  }
+  
