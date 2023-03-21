@@ -14,7 +14,7 @@ export const Login = () => {
       <div className="login-left-bottom">
         <div className="box-email">
           <label htmlFor="email">Email</label>
-          <input id="email" type="email" placeholder="joao@gmail.com" />
+          <input id="email" type="email" placeholder="maria@gmail.com" />
         </div>
         <div>
           <label htmlFor="senha">Senha</label>
