@@ -22,16 +22,45 @@ export const GerenciamentoAluno = () => {
             <div className="main-aluno">
 
                 <div className="container-aluno">
-                    <p>Gerenciamento de Alunos</p>
+                    <p className="name-page-aluno">Gerenciamento de Alunos</p>
+                </div>
+
+                <div className="container-crud-aluno">
+                    <button><a href="./pages/DashBoardAdicionar.tsx">ADICIONAR</a></button>
+                    <button>LISTAR</button>
                 </div>
 
                 <div className="gerenciamento-aluno">   
-                    <a href="">Adicionar</a>
-                    <a href="">Alterar</a>
-                    <a href="">LIstar</a>
-                    <a href="">Remover</a>
-                    
+
+                        <ul className="page-acoes">
+                            <div className="container-acoes-aluno">
+                                <li>Pedro Rodrigues Santos Silva</li>
+                                <button>REMOVER</button>
+                                <button>EDITAR</button>
+                            </div>
+
+                            <div className="container-acoes-aluno">
+                                <li>Pedro Rodrigues Santos Silva</li>
+                                <button>REMOVER</button>
+                                <button>EDITAR</button>
+                            </div>
+
+                            <div className="container-acoes-aluno">
+                                <li>Pedro Rodrigues Santos Silva</li>
+                                <button>REMOVER</button>
+                                <button>EDITAR</button>
+                            </div>
+
+                            <div className="container-acoes-aluno">
+                                <li>Pedro Rodrigues Santos Silva</li>
+                                <button>REMOVER</button>
+                                <button>EDITAR</button>
+                            </div>
+                            
+                        </ul>   
+         
                 </div>
+
             </div>
 
 

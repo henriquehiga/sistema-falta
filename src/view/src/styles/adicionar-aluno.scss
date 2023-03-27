@@ -1,0 +1,15 @@
+.forms-adicionar-aluno {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.forms-adicionar-aluno .campo-forms {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.forms-adicionar-aluno legend {
+    text-align: center;
+}

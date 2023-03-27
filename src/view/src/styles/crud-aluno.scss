@@ -1,10 +1,43 @@
 .main-aluno{
     display: flex; 
+    flex-direction: column;
     width: 100%;
-    gap: 12px;
+    gap: 30px;
 }
 
 .container-aluno {
     display: flex;
+    justify-content: center;
+}
+
+.container-aluno p {
+    font-size: 30px;
+}
+
+.container-crud-aluno {
+    display: flex;
+    gap: 20px;
+}
+
+.gerenciamento-aluno {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     
+}
+
+.gerenciamento-aluno .page-acoes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.gerenciamento-aluno .container-acoes-aluno {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.gerenciamento-aluno .button-acoes-aluno{
+    color: red($color: #000000);
 }
