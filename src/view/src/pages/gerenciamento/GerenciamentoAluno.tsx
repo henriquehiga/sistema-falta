@@ -31,8 +31,8 @@ export const GerenciamentoAluno = () => {
               </div>
 
               <div className="container-crud-text">
-                <button onClick={() => setTelaAtual(<ListaAlunos />)}>LISTA</button>
-                <button onClick={() => setTelaAtual(<AdicionaAluno />)}>ADICIONA</button>
+                <button onClick={() => setTelaAtual(<ListaAlunos />)}>LISTAR</button>
+                <button onClick={() => setTelaAtual(<AdicionaAluno />)}>ADICIONAR</button>
               </div>
 
               <div className="gerenciamento-crud">   
@@ -47,8 +47,13 @@ function ListaAlunos() {
     return(
         <div>
             <h1> LISTAGEM DE ALUNO</h1>
+            <p> Alice Maldonato </p>
             <p> Beatriz Lino </p>
             <p> José Antonio </p>
+            <p> Mateus Maximo</p>
+
+            <button> Remover Aluno </button>
+            <button> Editar Aluno </button>
         </div>
     )
 }
@@ -56,7 +61,16 @@ function ListaAlunos() {
 function AdicionaAluno() {
     return(
         <div>
-            <p>Adiciona aluno</p>
+            <h1>Adicionar Alunos:</h1>
+            <form action="/action_gerenciamento-aluno.">
+                <label for="fname">Nome do Aluno: </label>
+                <input form ="placerouder"></input>
+                <label for="lname">Email Responsável: </label>
+                <input form ="placerouder"></input>
+                <label for="turma">Turma: </label>
+                <input form ="placerouder"></input>
+                <input type="submit" value="Adicionar"></input>
+            </form>
         </div>
     )
 }
