@@ -15,7 +15,7 @@ import { Login } from "./pages/login";
 export const App = () => {
   return(
     <div className="main-app">
-      <DashboardAdicionarProfessor/>
+      <GerenciamentoAluno/>
     </div>
   );
 };
