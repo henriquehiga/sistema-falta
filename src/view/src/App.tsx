@@ -1,9 +1,12 @@
-import { GerenciamentoAluno } from "./pages/gerenciamento/GerenciamentoAluno";
+import { BrowserRouter } from "react-router-dom";
+import { AppRoutes } from "./routes";
 
 export const App = () => {
   return (
     <div className="main-app">
-      <GerenciamentoAluno />
+      <BrowserRouter>
+        <AppRoutes />
+      </BrowserRouter>
     </div>
   );
 };
