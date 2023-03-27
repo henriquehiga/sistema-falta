@@ -22,7 +22,7 @@ export const DashboardAdicionarMateria = () => {
             <div className="main-crud">
 
                 <div className="container-crud">
-                    <p className="name-page-text">Gerênciamento da Matéria</p>
+                    <p className="name-page-text">Gerenciamento da Matéria</p>
                 </div>
 
                 <div className="forms">

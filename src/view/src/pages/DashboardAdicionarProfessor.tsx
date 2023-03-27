@@ -22,7 +22,7 @@ export const DashboardAdicionarProfessor = () => {
             <div className="main-crud">
 
                 <div className="container-crud">
-                    <p className="name-page-text">Gerênciamento dos Professores</p>
+                    <p className="name-page-text">Gerenciamento dos Professores</p>
                 </div>
 
                 <div className="forms">

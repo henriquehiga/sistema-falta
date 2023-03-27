@@ -22,7 +22,7 @@ export const DashboardAdicionarTurma = () => {
             <div className="main-crud">
 
                 <div className="container-crud">
-                    <p className="name-page-text">Gerênciamento das Turmas</p>
+                    <p className="name-page-text">Gerenciamento das Turmas</p>
                 </div>
 
                 <div className="forms">

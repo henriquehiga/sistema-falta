@@ -22,7 +22,7 @@ export const DashboardAdicionarAluno = () => {
             <div className="main-crud">
 
                 <div className="container-crud">
-                    <p className="name-page-text">Gerênciamento dos Alunos</p>
+                    <p className="name-page-text">Gerenciamento dos Alunos</p>
                 </div>
 
                 <div className="forms">

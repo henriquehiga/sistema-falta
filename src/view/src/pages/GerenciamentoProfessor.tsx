@@ -26,7 +26,7 @@ export const GerenciamentoProfessor = () => {
                 </div>
 
                 <div className="container-crud-text">
-                    <button><a href="./pages/DashboardAdicionarMateria.tsx">ADICIONAR PROFESSOR:</a></button>
+                    <button><a href="./pages/DashboardAdicionarProfessor.tsx">ADICIONAR PROFESSOR:</a></button>
                     <button>LISTAR</button>
                 </div>
 

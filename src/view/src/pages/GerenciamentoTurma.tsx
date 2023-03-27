@@ -26,7 +26,7 @@ export const GerenciamentoTurma = () => {
                     </div>
 
                     <div className="container-crud-text">
-                        <button><a href="./pages/DashboardAdicionarMateria.tsx">ADICIONAR TURMA</a></button>
+                        <button><a href="./pages/DashboardAdicionarTurma.tsx">ADICIONAR TURMA</a></button>
                         <button>LISTAR</button>
                     </div>
 
