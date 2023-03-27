@@ -14,7 +14,7 @@
     "prisma:build": "npm run prisma:gen && npm run prisma:push && npm run prisma:fmt",
     "prisma:build:view": "npm run prisma:gen && npm run prisma:push && npm run prisma:fmt && npm run prisma:studio",
     "dev": "nodemon src/main/server.ts",
-    "start": "npm run build && node dist/main/server.js"
+    "start": "npm run prisma:gen && npm run build && node dist/main/server.js"
   },
   "prisma": {
     "schema": "src/main/infra/prisma/schema.prisma"
