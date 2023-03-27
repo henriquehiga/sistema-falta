@@ -1,43 +1,40 @@
-.main-aluno{
+.main-crud{
     display: flex; 
     flex-direction: column;
     width: 100%;
     gap: 30px;
 }
 
-.container-aluno {
+.container-crud {
     display: flex;
     justify-content: center;
-}
-
-.container-aluno p {
     font-size: 30px;
 }
 
-.container-crud-aluno {
+.container-crud-text {
     display: flex;
     gap: 20px;
 }
 
-.gerenciamento-aluno {
+.gerenciamento-crud {
     display: flex;
     flex-direction: column;
     gap: 20px;
     
 }
 
-.gerenciamento-aluno .page-acoes {
+.gerenciamento-crud .page-acoes {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.gerenciamento-aluno .container-acoes-aluno {
+.gerenciamento-crud .container-acoes-crud {
     display: flex;
     flex-direction: row;
     gap: 20px;
 }
 
-.gerenciamento-aluno .button-acoes-aluno{
+.gerenciamento-crud .button-acoes-aluno{
     color: red($color: #000000);
 }

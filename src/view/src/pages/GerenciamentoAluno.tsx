@@ -19,51 +19,51 @@ export const GerenciamentoAluno = () => {
                 </div>
             </aside>
 
-            <div className="main-aluno">
+            <div className="main-crud">
 
-                <div className="container-aluno">
-                    <p className="name-page-aluno">Gerenciamento de Alunos</p>
-                </div>
+              <div className="container-crud">
+                  <p className="name-page">Gerenciamento de Alunos</p>
+              </div>
 
-                <div className="container-crud-aluno">
-                    <button><a href="./pages/DashBoardAdicionar.tsx">ADICIONAR</a></button>
-                    <button>LISTAR</button>
-                </div>
+              <div className="container-crud-text">
+                  <button><a href="./pages/DashBoardAdicionarAluno.tsx">ADICIONAR</a></button>
+                  <button>LISTAR</button>
+              </div>
 
-                <div className="gerenciamento-aluno">   
+              <div className="gerenciamento-crud">   
 
-                        <ul className="page-acoes">
-                            <div className="container-acoes-aluno">
-                                <li>Pedro Rodrigues Santos Silva</li>
-                                <button>REMOVER</button>
-                                <button>EDITAR</button>
-                            </div>
+                      <ul className="page-acoes">
+                          <div className="container-acoes-crud">
+                              <li>Pedro Rodrigues Santos Silva</li>
+                              <button>REMOVER</button>
+                              <button>EDITAR</button>
+                          </div>
 
-                            <div className="container-acoes-aluno">
-                                <li>Pedro Rodrigues Santos Silva</li>
-                                <button>REMOVER</button>
-                                <button>EDITAR</button>
-                            </div>
+                          <div className="container-acoes-crud">
+                              <li>Pedro Rodrigues Santos Silva</li>
+                              <button>REMOVER</button>
+                              <button>EDITAR</button>
+                          </div>
 
-                            <div className="container-acoes-aluno">
-                                <li>Pedro Rodrigues Santos Silva</li>
-                                <button>REMOVER</button>
-                                <button>EDITAR</button>
-                            </div>
+                          <div className="container-acoes-crud">
+                              <li>Pedro Rodrigues Santos Silva</li>
+                              <button>REMOVER</button>
+                              <button>EDITAR</button>
+                          </div>
 
-                            <div className="container-acoes-aluno">
-                                <li>Pedro Rodrigues Santos Silva</li>
-                                <button>REMOVER</button>
-                                <button>EDITAR</button>
-                            </div>
-                            
-                        </ul>   
-         
-                </div>
+                          <div className="container-acoes-crud">
+                              <li>Pedro Rodrigues Santos Silva</li>
+                              <button>REMOVER</button>
+                              <button>EDITAR</button>
+                          </div>
+                          
+                      </ul>   
 
-            </div>
+              </div>
+
+              </div>
 
 
-        </div>
+              </div>
     )
 }

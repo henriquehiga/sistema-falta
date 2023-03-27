@@ -1,4 +1,4 @@
-export const DashboardAdicionar = () => {
+export const DashboardAdicionarProfessor = () => {
     return (
         <div className="wrapper">
             <aside className="menu">
@@ -19,26 +19,26 @@ export const DashboardAdicionar = () => {
                 </div>
             </aside>
 
-            <div className="main-aluno">
+            <div className="main-crud">
 
-                <div className="container-aluno">
-                    <p className="name-page-aluno">Gerenciamento de Alunos</p>
+                <div className="container-crud">
+                    <p className="name-page-text">Gerênciamento dos Professores</p>
                 </div>
 
                 <div className="forms">
 
-                    <form className="forms-adicionar-aluno">
+                    <form className="forms-adicionar">
 
-                        <legend>ADICIONAR ALUNO</legend>
+                        <legend>ADICIONAR PROFESSOR:</legend>
 
                         <div className="campo-forms">
-                            <label htmlFor="nome-aluno-form">Nome do Aluno</label>
+                            <label htmlFor="nome-form">Nome do Professor</label>
                             <input type="text" id="adicionar-form"/>
                         </div>
 
                         <div className="campo-forms">
-                            <label htmlFor="turma-aluno-form">Turma do Aluno</label>
-                            <input type="text" id="turma-aluno-form"/>
+                            <label htmlFor="turma-form">Turma do Professor</label>
+                            <input type="text" id="turma-form"/>
                         </div>
 
                         <div className="campo-forms-adicionar">
