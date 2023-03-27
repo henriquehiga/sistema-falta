@@ -1,4 +1,9 @@
+import { useState } from "react"
+import { Link } from "react-router-dom"
+
 export const GerenciamentoAluno = () => {
+    const [telaAtual, setTelaAtual] = useState<JSX.Element>(<ListaAlunos />)
+
     return (
         <div className="wrapper">
             <aside className="menu">
@@ -26,44 +31,32 @@ export const GerenciamentoAluno = () => {
               </div>
 
               <div className="container-crud-text">
-                  <button><a href="./pages/DashBoardAdicionarAluno.tsx">ADICIONAR</a></button>
-                  <button>LISTAR</button>
+                <button onClick={() => setTelaAtual(<ListaAlunos />)}>LISTA</button>
+                <button onClick={() => setTelaAtual(<AdicionaAluno />)}>ADICIONA</button>
               </div>
 
               <div className="gerenciamento-crud">   
-
-                      <ul className="page-acoes">
-                          <div className="container-acoes-crud">
-                              <li>Pedro Rodrigues Santos Silva</li>
-                              <button>REMOVER</button>
-                              <button>EDITAR</button>
-                          </div>
-
-                          <div className="container-acoes-crud">
-                              <li>Pedro Rodrigues Santos Silva</li>
-                              <button>REMOVER</button>
-                              <button>EDITAR</button>
-                          </div>
-
-                          <div className="container-acoes-crud">
-                              <li>Pedro Rodrigues Santos Silva</li>
-                              <button>REMOVER</button>
-                              <button>EDITAR</button>
-                          </div>
-
-                          <div className="container-acoes-crud">
-                              <li>Pedro Rodrigues Santos Silva</li>
-                              <button>REMOVER</button>
-                              <button>EDITAR</button>
-                          </div>
-                          
-                      </ul>   
-
+                      {telaAtual}  
               </div>
+        </div>
+        </div>
+    )
+}
 
-              </div>
+function ListaAlunos() {
+    return(
+        <div>
+            <h1> LISTAGEM DE ALUNO</h1>
+            <p> Beatriz Lino </p>
+            <p> José Antonio </p>
+        </div>
+    )
+}
 
-
-              </div>
+function AdicionaAluno() {
+    return(
+        <div>
+            <p>Adiciona aluno</p>
+        </div>
     )
 }
