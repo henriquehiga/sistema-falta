@@ -28,4 +28,13 @@ export class PrismaProfessorRepository implements ProfessorRepository {
       throw new Error(err);
     }
   }
+
+  async resgataProfessores(): Promise<ProfessorModel.Model[]> {
+    try {
+      const professores = await this.prisma.professor.findMany();
+      return professores;
+    } catch (err) {
+      throw new Error(err);
+    }
+  }
 }
