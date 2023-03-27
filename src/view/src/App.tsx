@@ -1,12 +1,14 @@
 import IMG from "./img/menino.jpg"
-import { DashboardAluno } from "./pages/dashboardaluno";
-import { DashboardProf } from "./pages/dashboardProf";
+import { DashboardAluno } from "./pages/DashboardAluno";
+import { DashboardProf } from "./pages/DashboardProf";
+import { DashboardTurma } from "./pages/DashboardTurma";
+import { GerenciamentoAluno } from "./pages/GerenciamentoAluno";
 import { Login } from "./pages/login";
 
 export const App = () => {
   return(
     <div className="main-app">
-      <DashboardAluno />
+      <GerenciamentoAluno/>
     </div>
   );
 };

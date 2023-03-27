@@ -1,5 +1,3 @@
-import Visualizar from "./img/eye.png"
-
 export const DashboardTurma = () => {
     return(
       <div className="wrapper">
@@ -40,13 +38,11 @@ export const DashboardTurma = () => {
                 <li className="list-students-item">
                   <strong>1. ANDREW JAMES LINCOLN</strong>
                   <button className="no-config">
-                  <img src={Visualizar} alt="" />
                   </button>
                 </li>
                 <li className="list-students-item">
                   <strong>2. ANDREW JAMES LINCOLN</strong>
                   <button className="no-config">
-                  <img src={Visualizar} alt="" />
                   </button>
                 </li>
               </ul>

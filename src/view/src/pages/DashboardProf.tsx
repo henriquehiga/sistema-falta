@@ -6,7 +6,7 @@ export const DashboardProf = () => {
         <a href="#">
           <img src="./img/teacher-thumb.jpg" alt="" />
         </a>
-        <strong>Professor</strong>
+        <strong>Professor:</strong>
         <p>Edward Cullen Silva</p>
       </div>
 
@@ -19,7 +19,7 @@ export const DashboardProf = () => {
     </aside>
     <main className="info">
       <header className="info-top">
-        <h1>INCIO</h1>
+        <h1>INÍCIO</h1>
       </header>
       <div className="info-main">
         <div className="info-main-subjects">
