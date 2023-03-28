@@ -1,4 +1,9 @@
-export const GerenciamentoMateria = () => {
+import { useState } from "react"
+import { Link } from "react-router-dom"
+
+export const GerenciamentoMateria= () => {
+    const [telaAtual, setTelaAtual] = useState<JSX.Element>(<ListaMaterias/>)
+
     return (
         <div className="wrapper">
             <aside className="menu">
@@ -21,48 +26,58 @@ export const GerenciamentoMateria = () => {
 
             <div className="main-crud">
 
-                <div className="container-crud">
-                    <p className="name-page">Gerenciamento de Matérias</p>
-                </div>
+              <div className="container-crud">
+                  <p className="name-page">Gerenciamento de Turmas</p>
+              </div>
 
-                <div className="container-crud-text">
-                    <button><a href="./pages/DashboardAdicionarMateria.tsx">ADICIONAR</a></button>
-                    <button>LISTAR</button>
-                </div>
+              <div className="container-crud-text">
+                <button onClick={() => setTelaAtual(<ListaMaterias/>)}>LISTA DAS MATÉRIAS</button>
+                <button onClick={() => setTelaAtual(<AdicionaMaterias/>)}>ADICIONAR MATÉRIAS</button>
+              </div>
 
-                <div className="gerenciamento-crud">   
+              <div className="gerenciamento-crud">   
+                      {telaAtual}  
+              </div>
+        </div>
+        </div>
+    )
+}
 
-                        <ul className="page-acoes">
-                            <div className="container-acoes-crud">
-                                <li>PORTUGÊS</li>
-                                <button>REMOVER</button>
-                                <button>EDITAR</button>
-                            </div>
+function ListaMaterias() {
+    return(
+        <div>
+            <h1> LISTAGEM DAS MATÉRIAS</h1>
 
-                            <div className="container-acoes-crud">
-                                <li>MATEMÁTICA</li>
-                                <button>REMOVER</button>
-                                <button>EDITAR</button>
-                            </div>
-
-                            <div className="container-acoes-crud">
-                                <li>ARTE</li>
-                                <button>REMOVER</button>
-                                <button>EDITAR</button>
-                            </div>
-
-                            <div className="container-acoes-crud">
-                                <li>HISTÓRIA</li>
-                                <button>REMOVER</button>
-                                <button>EDITAR</button>
-                            </div>
-                            
-                        </ul>   
-         
-                </div>
-
+            <div className="container-crud-list">
+                <p>05J</p>
+                <button>REMOVER</button>
+                <button>EDITAR</button>
             </div>
 
+        </div>
+    )
+}
+
+function AdicionaMaterias() {
+    return(
+        <div className="conatiner-crud-adicionar">
+            <form className="forms-adicionar">
+
+                <div className="campo-adicionar">
+                    <label htmlFor="">Nome da Matéria</label>
+                    <input type="text" placeholder="Português"/>
+                </div>
+
+                <div className="campo-adicionar">
+                    <label htmlFor="">Quantidade de Aulas</label>
+                    <input type="text" placeholder="20"/>
+                </div>
+
+            </form>
+
+            <div>
+                <button>ADICIONAR</button>
+            </div>
 
         </div>
     )

@@ -1,4 +1,9 @@
-export const GerenciamentoProfessor = () => {
+import { useState } from "react"
+import { Link } from "react-router-dom"
+
+export const GerenciamentoProfessor= () => {
+    const [telaAtual, setTelaAtual] = useState<JSX.Element>(<ListaProfessores />)
+
     return (
         <div className="wrapper">
             <aside className="menu">
@@ -21,48 +26,52 @@ export const GerenciamentoProfessor = () => {
 
             <div className="main-crud">
 
-                <div className="container-crud">
-                    <p className="name-page">Gerenciamento dos Professores</p>
-                </div>
+              <div className="container-crud">
+                  <p className="name-page">Gerenciamento de Turmas</p>
+              </div>
 
-                <div className="container-crud-text">
-                    <button><a href="./pages/DashboardAdicionarProfessor.tsx">ADICIONAR PROFESSOR:</a></button>
-                    <button>LISTAR</button>
-                </div>
+              <div className="container-crud-text">
+                <button onClick={() => setTelaAtual(<ListaProfessores />)}>LISTA DOS PROFESSORES</button>
+                <button onClick={() => setTelaAtual(<AdicionaProfessores />)}>ADICIONAR PROFESSORES</button>
+              </div>
 
-                <div className="gerenciamento-crud">   
+              <div className="gerenciamento-crud">   
+                      {telaAtual}  
+              </div>
+        </div>
+        </div>
+    )
+}
 
-                        <ul className="page-acoes">
-                            <div className="container-acoes-crud">
-                                <li>LUÍS</li>
-                                <button>REMOVER</button>
-                                <button>EDITAR</button>
-                            </div>
+function ListaProfessores() {
+    return(
+        <div>
+            <h1> LISTAGEM DOS PROFESSORES</h1>
 
-                            <div className="container-acoes-crud">
-                                <li>RICARDO</li>
-                                <button>REMOVER</button>
-                                <button>EDITAR</button>
-                            </div>
-
-                            <div className="container-acoes-crud">
-                                <li>JOEL</li>
-                                <button>REMOVER</button>
-                                <button>EDITAR</button>
-                            </div>
-
-                            <div className="container-acoes-crud">
-                                <li>MARCOS</li>
-                                <button>REMOVER</button>
-                                <button>EDITAR</button>
-                            </div>
-                            
-                        </ul>   
-         
-                </div>
-
+            <div className="container-crud-list">
+                <p>05J</p>
+                <button>REMOVER</button>
+                <button>EDITAR</button>
             </div>
 
+        </div>
+    )
+}
+
+function AdicionaProfessores() {
+    return(
+        <div className="container-crud-adicionar">
+            <form className="forms-adicionar">
+
+                <div className="campo-adicionar">
+                    <label htmlFor="">Nome do Professor</label>
+                    <input type="text" placeholder="Jõao Miguel"/>
+                </div>
+            </form>
+
+            <div>
+                <button>ADICIONAR</button>
+            </div>
 
         </div>
     )

@@ -10,6 +10,7 @@
     gap: 15px;
 }
 
-.forms-adicionar legend {
-    text-align: center;
+.container-crud-list {
+    display: flex;
+    flex-direction: row;
 }

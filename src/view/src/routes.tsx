@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { Login } from "./pages/Login";
+import { Login } from "./pages/login";
 import { GerenciamentoAluno } from "./pages/gerenciamento/GerenciamentoAluno";
 import { GerenciamentoMateria } from "./pages/gerenciamento/GerenciamentoMateria";
 import { GerenciamentoProfessor } from "./pages/gerenciamento/GerenciamentoProfessor";

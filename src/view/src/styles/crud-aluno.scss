@@ -8,7 +8,7 @@
 .container-crud {
     display: flex;
     justify-content: center;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .container-crud-text {
@@ -37,4 +37,10 @@
 
 .gerenciamento-crud .button-acoes-aluno{
     color: red($color: #000000);
+}
+
+.container-crud-adicionar{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
