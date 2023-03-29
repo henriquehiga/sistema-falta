@@ -8,9 +8,9 @@ datasource db {
 }
 
 model Aluno {
-  id                String  @id
-  nome              String  @unique
-  aprovado         Boolean?
+  id                String   @id
+  nome              String   @unique
+  aprovado          Boolean?
   email_responsavel String
   turma             String
 
