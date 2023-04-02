@@ -4,4 +4,5 @@ export interface ProfessorRepository {
   salvar(data: ProfessorModel.Model): Promise<ProfessorModel.Model>;
   resgataPorId(id: string): Promise<ProfessorModel.Model>;
   resgataProfessores(): Promise<ProfessorModel.Model[]>;
+  deleta(id: string): Promise<void>;
 }

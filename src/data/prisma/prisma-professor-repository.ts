@@ -37,4 +37,16 @@ export class PrismaProfessorRepository implements ProfessorRepository {
       throw new Error(err);
     }
   }
+
+  async deleta(id: string): Promise<void> {
+    try {
+      await this.prisma.professor.delete({
+        where: {
+          id,
+        },
+      });
+    } catch (err) {
+      throw new Error(err);
+    }
+  }
 }
