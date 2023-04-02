@@ -28,4 +28,13 @@ export class PrismaAlunoRepository implements AlunoRepository {
       throw new Error(err);
     }
   }
+
+  async lista(): Promise<AlunoModel.Model[]> {
+    try {
+      const found = await this.prisma.aluno.findMany();
+      return found;
+    } catch (err) {
+      throw new Error(err);
+    }
+  }
 }
