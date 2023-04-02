@@ -10,8 +10,8 @@ export const Login = () => {
             Sistema de falta escolar
           </h1>
           <form className="w-full flex flex-col gap-4">
-            <input type="text" placeholder="Nome de usuário" />
-            <input type="text" placeholder="Senha" />
+            <input type="text" placeholder="Digite seu nome de usuário..." />
+            <input type="text" placeholder="Digite sua senha..." />
             <Link className="w-full" to="/gerenciamento/professor">
               <button className="bg-blue-500 w-full text-white">Entrar</button>
             </Link>
