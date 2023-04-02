@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useApi } from "../../hooks/useApi";
 
 export const GerenciamentoAluno = () => {
-  const [currentPage, setCurrentPage] = useState<JSX.Element>(<Lista />);
+  const [currentPage, setCurrentPage] = useState<JSX.Element>(<Criar />);
 
   function handleChangeComponentOnScreen(component: JSX.Element) {
     setCurrentPage(component);
@@ -32,22 +32,27 @@ export const GerenciamentoAluno = () => {
 };
 
 function Lista() {
-  const [professores, setProfessores] = useState<ProfessorType[]>([]);
+  const [alunos, setAlunos] = useState<AlunoType[]>([]);
   const { get } = useApi();
 
-  type ProfessorType = {
+  type AlunoType = {
     id: string;
     nome: string;
+    aprovado: boolean;
+    email_responsavel: string;
+    turma: string;
   };
 
   useEffect(() => {
-    resgataProfessores();
+    resgataAlunos();
   }, []);
 
-  async function resgataProfessores() {
-    const output = await get("/professor");
-    const { data } = output;
-    setProfessores(data.body);
+  async function resgataAlunos() {
+    const output = await get("/aluno");
+    if (output) {
+      const { data } = output;
+      setAlunos(data.body);
+    }
   }
 
   return (
@@ -82,20 +87,41 @@ function Lista() {
           </tr>
         </thead>
         <tbody className="bg-white divide-y divide-gray-200">
-          {professores?.map((professor) => {
+          {alunos?.map((aluno) => {
             return (
-              <tr>
+              <tr key={aluno.id}>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="flex items-center">
                     <div className="text-sm font-medium text-gray-900">
-                      {professor.id}
+                      {aluno.id}
                     </div>
                   </div>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="flex items-center">
                     <div className="text-sm font-medium text-gray-900">
-                      {professor.nome}
+                      {aluno.nome}
+                    </div>
+                  </div>
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap">
+                  <div className="flex items-center">
+                    <div className="text-sm font-medium text-gray-900">
+                      {aluno.turma}
+                    </div>
+                  </div>
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap">
+                  <div className="flex items-center">
+                    <div className="text-sm font-medium text-gray-900">
+                      {aluno.email_responsavel}
+                    </div>
+                  </div>
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap">
+                  <div className="flex items-center">
+                    <div className="text-sm font-medium text-gray-900">
+                      {aluno.aprovado}
                     </div>
                   </div>
                 </td>
@@ -131,8 +157,10 @@ function Criar() {
       email_responsavel: emailResponsavel,
     };
     const output = await post("/aluno", input);
-    if (output.status == 200) {
-      setNome("");
+    if (output) {
+      if (output.status == 200) {
+        setNome("");
+      }
     }
   }
 

@@ -7,9 +7,6 @@ export const MenuLateral = () => {
         <h1 className="font-2xl font-semibold">Sistema de falta</h1>
       </div>
       <div className="flex flex-col gap-4 px-4">
-        <Link to="/dashboard">
-          <p>Home</p>
-        </Link>
         <Link to="/gerenciamento/aluno">
           <p>Aluno</p>
         </Link>

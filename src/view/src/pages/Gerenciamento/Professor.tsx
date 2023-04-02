@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useApi } from "../../hooks/useApi";
 
 export const GerenciamentoProfessor = () => {
-  const [currentPage, setCurrentPage] = useState<JSX.Element>(<Lista />);
+  const [currentPage, setCurrentPage] = useState<JSX.Element>(<Criar />);
 
   function handleChangeComponentOnScreen(component: JSX.Element) {
     setCurrentPage(component);
@@ -46,8 +46,10 @@ function Lista() {
 
   async function resgataProfessores() {
     const output = await get("/professor");
-    const { data } = output;
-    setProfessores(data.body);
+    if (output) {
+      const { data } = output;
+      setProfessores(data.body);
+    }
   }
 
   return (
@@ -84,7 +86,7 @@ function Lista() {
         <tbody className="bg-white divide-y divide-gray-200">
           {professores?.map((professor) => {
             return (
-              <tr>
+              <tr key={professor.id}>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="flex items-center">
                     <div className="text-sm font-medium text-gray-900">
@@ -127,8 +129,10 @@ function Criar() {
       nome,
     };
     const output = await post("/professor", input);
-    if (output.status == 200) {
-      setNome("");
+    if (output) {
+      if (output.status == 200) {
+        setNome("");
+      }
     }
   }
 
