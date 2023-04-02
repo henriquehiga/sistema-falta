@@ -12,7 +12,7 @@ model Aluno {
   nome              String   @unique
   aprovado          Boolean?
   email_responsavel String
-  turma             String
+  turma_id             String
 
   @@map("aluno")
 }
@@ -47,4 +47,11 @@ model Aula {
   disciplina_id String
 
   @@map("aula")
+}
+
+model Turma {
+  id   String @id
+  nome String
+
+  @@map("turma")
 }
