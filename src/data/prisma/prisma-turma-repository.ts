@@ -1,3 +1,4 @@
+import { TurmaModel } from "../../domain/entities/models/turma-model";
 import { prisma } from "../../main/infra/prisma/prisma";
 import { TurmaRepository } from "../turma-repository";
 

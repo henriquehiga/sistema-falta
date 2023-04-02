@@ -1,3 +1,5 @@
+import { TurmaModel } from "../domain/entities/models/turma-model";
+
 export interface TurmaRepository {
   salvar(data: TurmaModel.Model): Promise<TurmaModel.Model>;
   resgataPorId(id: string): Promise<TurmaModel.Model>;
