@@ -2,7 +2,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import { MenuLateral } from "./components/MenuLateral";
 import { GerenciamentoAluno } from "./pages/Gerenciamento/Aluno";
 import { GerenciamentoProfessor } from "./pages/Gerenciamento/Professor";
-import { Login } from "./pages/Login";
+import { Login } from "./pages/LoginPage";
 
 export const AppRoutes = () => {
   const { pathname } = useLocation();
