@@ -37,4 +37,16 @@ export class PrismaAlunoRepository implements AlunoRepository {
       throw new Error(err);
     }
   }
+
+  async excluir(id: string): Promise<void> {
+    try {
+      await this.prisma.aluno.delete({
+        where: {
+          id,
+        },
+      });
+    } catch (err) {
+      throw new Error(err);
+    }
+  }
 }
