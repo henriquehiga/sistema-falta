@@ -28,26 +28,11 @@ export class Professor {
   static validate({
     id,
     nome,
-    email,
   }: ProfessorModel.Model): ValidateProfessorPropsResponse {
     if (nome.length < 3 || nome.length > 64) {
       return {
         campo: "nome",
         erro: "A quantidade de caracteres no NOME deve ser entre 3 e 64",
-        valido: false,
-      };
-    }
-    if (email.length < 3 || email.length > 64) {
-      return {
-        campo: "email",
-        erro: "A quantidade de caracteres no EMAIL deve ser entre 3 e 64",
-        valido: false,
-      };
-    }
-    if (!email.includes("@") || !email.includes(".")) {
-      return {
-        campo: "email",
-        erro: "Por favor forneça um e-mail válido",
         valido: false,
       };
     }
