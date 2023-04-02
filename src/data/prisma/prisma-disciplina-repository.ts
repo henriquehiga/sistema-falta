@@ -28,4 +28,13 @@ export class PrismaDisciplinaRepository implements DisciplinaRepository {
       throw new Error(err);
     }
   }
+
+  async lista(): Promise<DisciplinaModel.Model[]> {
+    try {
+      const found = await this.prisma.disciplina.findMany();
+      return found;
+    } catch (err) {
+      throw new Error(err);
+    }
+  }
 }
