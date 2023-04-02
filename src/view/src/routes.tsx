@@ -1,21 +1,23 @@
-import { Route, Routes } from "react-router-dom";
-import { Login } from "./pages/login";
-import { GerenciamentoAluno } from "./pages/gerenciamento/GerenciamentoAluno";
-import { GerenciamentoMateria } from "./pages/gerenciamento/GerenciamentoMateria";
-import { GerenciamentoProfessor } from "./pages/gerenciamento/GerenciamentoProfessor";
-import { GerenciamentoTurma } from "./pages/gerenciamento/GerenciamentoTurma";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { MenuLateral } from "./components/MenuLateral";
+import { GerenciamentoAluno } from "./pages/Gerenciamento/Aluno";
+import { GerenciamentoProfessor } from "./pages/Gerenciamento/Professor";
+import { Login } from "./pages/Login";
 
 export const AppRoutes = () => {
+  const { pathname } = useLocation();
+
   return (
-    <Routes>
-      <Route element={<Login />} path="/" />
-      <Route
-        element={<GerenciamentoProfessor />}
-        path="/gerenciamento-professor"
-      />
-      <Route element={<GerenciamentoAluno />} path="/gerenciamento-aluno" />
-      <Route element={<GerenciamentoTurma />} path="/gerenciamento-turma" />
-      <Route element={<GerenciamentoMateria />} path="/gerenciamento-materia" />
-    </Routes>
+    <div className="min-h-screen w-full flex">
+      {pathname != "/" && <MenuLateral />}
+      <Routes>
+        <Route element={<Login />} path="/" />
+        <Route
+          element={<GerenciamentoProfessor />}
+          path="/gerenciamento/professor"
+        />
+        <Route element={<GerenciamentoAluno />} path="/gerenciamento/aluno" />
+      </Routes>
+    </div>
   );
 };

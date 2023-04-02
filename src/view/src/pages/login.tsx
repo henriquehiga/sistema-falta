@@ -1,40 +1,23 @@
 import { Link } from "react-router-dom";
-import LoginBackground from "../img/login.jpg";
 
 export const Login = () => {
   return (
-    <div>
-      <div className="login">
-        <div className="login-left">
-          <div className="login-left-top">
-            <h1>Login</h1>
-            <h2>Escola Octógono</h2>
-            <p>
-              Sistema de Presença
-              <br /> <b>Professor</b>
-            </p>
-          </div>
-
-          <div className="login-left-bottom">
-            <div className="box-email">
-              <label htmlFor="email">Email</label>
-              <input id="email" type="email" placeholder="maria@gmail.com" />
-            </div>
-            <div>
-              <label htmlFor="senha">Senha</label>
-              <input id="senha" type="password" placeholder="●●●●●●●●" />
-            </div>
-
-            <a href="#">Esqueceu a senha?</a>
-
-            <Link to={"/dashboard-professor"}>Entrar</Link>
-          </div>
-        </div>
-
-        <div className="login-right">
-          <img src={LoginBackground} alt="" />
+    <section className="min-h-screen flex w-full">
+      <div className="w-full bg-blue-500"></div>
+      <div className="w-full bg-white">
+        <div className="w-full h-full flex flex-col justify-center items-center gap-10 px-20">
+          <h1 className="text-2xl font-semibold uppercase">
+            Sistema de falta escolar
+          </h1>
+          <form className="w-full flex flex-col gap-4">
+            <input type="text" placeholder="Nome de usuário" />
+            <input type="text" placeholder="Senha" />
+            <Link className="w-full" to="/gerenciamento/professor">
+              <button className="bg-blue-500 w-full text-white">Entrar</button>
+            </Link>
+          </form>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
