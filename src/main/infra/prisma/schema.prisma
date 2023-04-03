@@ -7,20 +7,33 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Turma {
+  id    String  @id
+  nome  String
+  Aluno Aluno[]
+
+  @@unique([id, nome])
+  @@map("turma")
+}
+
 model Aluno {
   id                String   @id
   nome              String   @unique
   aprovado          Boolean?
   email_responsavel String
   turma_id          String
+  turma_nome        String
+  turma             Turma    @relation(fields: [turma_id, turma_nome], references: [id, nome])
 
   @@map("aluno")
 }
 
 model Professor {
-  id            String @id
-  nome          String
+  id   String @id
+  nome String
+  Aula Aula[]
 
+  @@unique([id, nome])
   @@map("professor")
 }
 
@@ -28,7 +41,9 @@ model Disciplina {
   id        String @id
   nome      String @unique
   qtd_aulas Int
+  Aula      Aula[]
 
+  @@unique([id, nome])
   @@map("disciplina")
 }
 
@@ -42,16 +57,13 @@ model Falta {
 }
 
 model Aula {
-  id            String @id
-  professor_id  String
-  disciplina_id String
+  id              String     @id
+  professor_id    String
+  professor_nome  String
+  disciplina_id   String
+  disciplina_nome String
+  disciplina      Disciplina @relation(fields: [disciplina_id, disciplina_nome], references: [id, nome])
+  professor       Professor  @relation(fields: [professor_id, professor_nome], references: [id, nome])
 
   @@map("aula")
-}
-
-model Turma {
-  id   String @id
-  nome String
-
-  @@map("turma")
 }

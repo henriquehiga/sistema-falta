@@ -1,12 +1,12 @@
+import { AulaRepository } from "../../data/aula-repository";
+import { DisciplinaRepository } from "../../data/disciplina-repository";
+import { ProfessorRepository } from "../../data/professor-repository";
+import { Uuid } from "../../libs/uuid";
 import { Either, left, right } from "../../shared/either";
 import { ErrorResponse } from "../../shared/error-response";
-import { Uuid } from "../../libs/uuid";
-import { NovaAulaUsecaseProtocol } from "./protocols/nova-aula-usecase-protocol";
-import { AulaModel } from "../entities/models/aula-model";
 import { Aula } from "../entities/aula";
-import { AulaRepository } from "../../data/aula-repository";
-import { ProfessorRepository } from "../../data/professor-repository";
-import { DisciplinaRepository } from "../../data/disciplina-repository";
+import { AulaModel } from "../entities/models/aula-model";
+import { NovaAulaUsecaseProtocol } from "./protocols/nova-aula-usecase-protocol";
 
 export class NovaAula implements NovaAulaUsecaseProtocol {
   constructor(
