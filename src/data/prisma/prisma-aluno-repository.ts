@@ -49,4 +49,17 @@ export class PrismaAlunoRepository implements AlunoRepository {
       throw new Error(err);
     }
   }
+
+  async resgataPorTurma(id: string): Promise<AlunoModel.Model[]> {
+    try {
+      const found = await this.prisma.aluno.findMany({
+        where: {
+          turma_id: id,
+        },
+      });
+      return found;
+    } catch (err) {
+      throw new Error(err);
+    }
+  }
 }

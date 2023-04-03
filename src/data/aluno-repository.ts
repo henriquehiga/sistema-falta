@@ -5,4 +5,5 @@ export interface AlunoRepository {
   resgataPorId(id: string): Promise<AlunoModel.Model | null>;
   lista(): Promise<AlunoModel.Model[]>;
   excluir(id: string): Promise<void>;
+  resgataPorTurma(id: string): Promise<AlunoModel.Model[]>;
 }
