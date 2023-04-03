@@ -47,4 +47,13 @@ export class PrismaAulaRepository implements AulaRepository {
       throw new Error(err);
     }
   }
+
+  async lista(): Promise<AulaModel.Model[]> {
+    try {
+      const found = await this.prisma.aula.findMany();
+      return found;
+    } catch (err) {
+      throw new Error(err);
+    }
+  }
 }

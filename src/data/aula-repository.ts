@@ -7,4 +7,5 @@ export interface AulaRepository {
     disciplina_id: string
   ): Promise<AulaModel.Model>;
   resgataPorId(id: string): Promise<AulaModel.Model>;
+  lista(): Promise<AulaModel.Model[]>;
 }

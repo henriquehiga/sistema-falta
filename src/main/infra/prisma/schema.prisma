@@ -12,14 +12,14 @@ model Aluno {
   nome              String   @unique
   aprovado          Boolean?
   email_responsavel String
-  turma_id             String
+  turma_id          String
 
   @@map("aluno")
 }
 
 model Professor {
-  id   String @id
-  nome String
+  id            String @id
+  nome          String
 
   @@map("professor")
 }
