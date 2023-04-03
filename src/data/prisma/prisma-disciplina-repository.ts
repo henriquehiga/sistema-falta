@@ -37,4 +37,16 @@ export class PrismaDisciplinaRepository implements DisciplinaRepository {
       throw new Error(err);
     }
   }
+
+  async deleta(id: string): Promise<void> {
+    try {
+      await this.prisma.disciplina.delete({
+        where: {
+          id,
+        },
+      });
+    } catch (err) {
+      throw new Error(err);
+    }
+  }
 }
