@@ -69,4 +69,16 @@ export class PrismaAulaRepository implements AulaRepository {
       throw new Error(err);
     }
   }
+
+  async deleta(id: string): Promise<void> {
+    try {
+      await this.prisma.aula.delete({
+        where: {
+          id,
+        },
+      });
+    } catch (err) {
+      throw new Error(err);
+    }
+  }
 }

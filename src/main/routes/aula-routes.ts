@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { adaptRoute } from "../adapters/express-route-adapter";
+import { makeDeletaAulaController } from "../factories/deleta-aula-controller-factory";
 import { makeNovaAulaController } from "../factories/nova-aula-controller-factory";
 import { makeResgataAulasController } from "../factories/resgata-aulas-controller-factory";
 import { makeResgataAulasPorIdProfessor } from "../factories/resgata-aulas-por-id-professor-factory";
@@ -11,4 +12,5 @@ export default (router: Router) => {
     "/aula/:idProfessor",
     adaptRoute(makeResgataAulasPorIdProfessor())
   );
+  router.delete("/aula/:id", adaptRoute(makeDeletaAulaController()));
 };
