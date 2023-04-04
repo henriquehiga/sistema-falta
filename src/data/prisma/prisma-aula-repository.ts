@@ -56,4 +56,17 @@ export class PrismaAulaRepository implements AulaRepository {
       throw new Error(err);
     }
   }
+
+  async resgataPorIdProfessor(idProfessor: string): Promise<AulaModel.Model[]> {
+    try {
+      const found = await this.prisma.aula.findMany({
+        where: {
+          professor_id: idProfessor,
+        },
+      });
+      return found;
+    } catch (err) {
+      throw new Error(err);
+    }
+  }
 }

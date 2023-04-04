@@ -10,7 +10,7 @@ export default (router: Router) => {
   router.get("/aluno", adaptRoute(makeResgataAlunosController()));
   router.delete("/aluno/:id", adaptRoute(makeDeletaAlunoController()));
   router.get(
-    "/aluno/:idTurma",
+    "/aluno/turma/:idTurma",
     adaptRoute(makeResgataAlunosPorTurmaController())
   );
 };

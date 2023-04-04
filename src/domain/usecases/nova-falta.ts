@@ -27,7 +27,7 @@ export class NovaFalta implements NovaFaltaUsecaseProtocol {
       const id = Uuid.generate();
       let faltaModel: FaltaModel.Model = {
         id,
-        data: new Date(falta.data),
+        data: falta.data ? new Date(falta.data) : new Date(),
         ...falta,
       };
       const faltaOrError = Falta.create(faltaModel);
@@ -68,6 +68,12 @@ export class NovaFalta implements NovaFaltaUsecaseProtocol {
           console.log(
             "Perigo! O Aluno possui " + qtdFaltasDisciplinaSemestre + " faltas."
           );
+        }
+        if (qtdFaltasDisciplinaSemestre >= disciplina.qtd_aulas * 0.75) {
+          await this.alunoRepo.editar(alunoEncontrado.id, {
+            ...alunoEncontrado,
+            aprovado: false,
+          });
         }
         faltaPersistida = await this.faltaRepo.salvar(faltaOrError.value.props);
       } catch (err) {

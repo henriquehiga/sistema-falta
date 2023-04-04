@@ -62,4 +62,18 @@ export class PrismaAlunoRepository implements AlunoRepository {
       throw new Error(err);
     }
   }
+
+  async editar(id: string, data: AlunoModel.Model): Promise<AlunoModel.Model> {
+    try {
+      const updated = await this.prisma.aluno.update({
+        where: {
+          id,
+        },
+        data,
+      });
+      return updated;
+    } catch (err) {
+      throw new Error(err);
+    }
+  }
 }

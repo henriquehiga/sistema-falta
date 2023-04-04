@@ -11,6 +11,7 @@ model Turma {
   id    String  @id
   nome  String
   Aluno Aluno[]
+  Aula  Aula[]
 
   @@unique([id, nome])
   @@map("turma")
@@ -62,8 +63,11 @@ model Aula {
   professor_nome  String
   disciplina_id   String
   disciplina_nome String
+  turma_id        String
+  turma_nome      String
   disciplina      Disciplina @relation(fields: [disciplina_id, disciplina_nome], references: [id, nome])
   professor       Professor  @relation(fields: [professor_id, professor_nome], references: [id, nome])
+  turma           Turma      @relation(fields: [turma_id, turma_nome], references: [id, nome])
 
   @@map("aula")
 }
