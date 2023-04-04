@@ -41,7 +41,6 @@ Este projeto tem como objetivo desenvolver um sistema de gerenciamento de faltas
 
 # Protótipos de tela
 
-![1 (1)](https://user-images.githubusercontent.com/89232973/229906246-ce8d478c-0ed0-43ab-a30b-dd0882213502.png)
 
 
 # Modelo de domínio
