@@ -41,11 +41,7 @@ Este projeto tem como objetivo desenvolver um sistema de gerenciamento de faltas
 
 # Protótipos de tela
 
-_&lt;<img width="521" alt="Screen Shot 2023-02-19 at 17 08 30" src="https://user-images.githubusercontent.com/49994740/219972775-8cbef5ba-1b06-452c-b528-5e7375981da0.png">
-<img width="519" alt="Screen Shot 2023-02-19 at 17 08 11" src="https://user-images.githubusercontent.com/49994740/219972777-9011de28-dbb5-4a39-a06b-ba3c9c7e7737.png">
-<img width="519" alt="Screen Shot 2023-02-19 at 17 07 47" src="https://user-images.githubusercontent.com/49994740/219972781-096e7a60-0057-4569-9a94-798418422c9d.png">
-<img width="524" alt="Screen Shot 2023-02-19 at 17 07 20" src="https://user-images.githubusercontent.com/49994740/219972784-c636b9b1-eaf6-4a36-9cb3-eebbf4ea0b48.png">
-Protótipos de tela&gt;_
+![1 (1)](https://user-images.githubusercontent.com/89232973/229906246-ce8d478c-0ed0-43ab-a30b-dd0882213502.png)
 
 
 # Modelo de domínio
