@@ -47,6 +47,7 @@ Este projeto tem como objetivo desenvolver um sistema de gerenciamento de faltas
 ![4](https://user-images.githubusercontent.com/89232973/229906923-020a8107-beb0-4d32-ad48-e8c3795ea76b.png)
 ![5](https://user-images.githubusercontent.com/89232973/229906961-cbaa92fa-22d0-4a97-9eb9-ca8441955a1f.png)
 ![6](https://user-images.githubusercontent.com/89232973/229907002-1f0ae95e-8939-4b2d-8d14-d5d643e7995a.png)
+![7](https://user-images.githubusercontent.com/89232973/229907461-1c29cf4f-b46b-4c8d-ae6e-f22952af74da.png)
 
 
 # Modelo de domínio
