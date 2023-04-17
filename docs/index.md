@@ -57,7 +57,7 @@ https://drive.google.com/file/d/16co08C-lQb6JEBMYuNdWyCcqQEyP5Rfz/view?usp=shari
 
 # Decisões de arquitetura
 
-https://drive.google.com/file/d/1pU6P3gjr4_5mFYadPiFOlymzV3r_lSyk/view?usp=sharing
+https://drive.google.com/file/d/1w3ytyZpov2YwlegYTej8NBbdUs0YnTGB/view?usp=sharing
 
 # Diagrama de implantação
 
