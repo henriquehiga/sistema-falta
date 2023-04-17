@@ -55,7 +55,6 @@ Este projeto tem como objetivo desenvolver um sistema de gerenciamento de faltas
 
 https://drive.google.com/file/d/16co08C-lQb6JEBMYuNdWyCcqQEyP5Rfz/view?usp=sharing
 
-
 # Decisões de arquitetura
 
 https://drive.google.com/file/d/1w3ytyZpov2YwlegYTej8NBbdUs0YnTGB/view?usp=sharing
