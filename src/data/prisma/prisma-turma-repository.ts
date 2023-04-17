@@ -49,4 +49,17 @@ export class PrismaTurmaRepository implements TurmaRepository {
       throw new Error(err);
     }
   }
+
+  async edita(id: string, data: TurmaModel.Model): Promise<void> {
+    try {
+      await this.prisma.turma.update({
+        where: {
+          id,
+        },
+        data,
+      });
+    } catch (err) {
+      throw new Error(err);
+    }
+  }
 }

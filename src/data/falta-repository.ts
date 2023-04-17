@@ -4,4 +4,5 @@ export interface FaltaRepository {
   salvar(data: FaltaModel.Model): Promise<FaltaModel.Model>;
   resgataPorId(id: string): Promise<FaltaModel.Model>;
   resgataPorIdAluno(id: string): Promise<FaltaModel.Model[]>;
+  resgataPorIdAula(id: string): Promise<FaltaModel.Model[]>;
 }

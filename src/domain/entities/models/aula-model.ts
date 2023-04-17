@@ -1,6 +1,7 @@
 export namespace AulaModel {
   export type Model = {
     id: string;
+    dia_semana: number;
     professor_id: string;
     disciplina_id: string;
     professor_nome: string;

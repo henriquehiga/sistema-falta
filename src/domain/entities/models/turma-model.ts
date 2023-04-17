@@ -3,6 +3,6 @@ export namespace TurmaModel {
     id: string;
     nome: string;
   };
-
   export type Create = Omit<TurmaModel.Model, "id">;
+  export type Edit = Omit<TurmaModel.Model, "id">;
 }

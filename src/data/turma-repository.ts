@@ -5,4 +5,5 @@ export interface TurmaRepository {
   resgataPorId(id: string): Promise<TurmaModel.Model>;
   resgataTurmas(): Promise<TurmaModel.Model[]>;
   deleta(id: string): Promise<void>;
+  edita(id: string, turma: TurmaModel.Create): Promise<void>;
 }

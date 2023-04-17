@@ -1,6 +1,6 @@
-import { FaltaRepository } from "./../falta-repository";
-import { prisma } from "../../main/infra/prisma/prisma";
 import { FaltaModel } from "../../domain/entities/models/falta-model";
+import { prisma } from "../../main/infra/prisma/prisma";
+import { FaltaRepository } from "./../falta-repository";
 
 export class PrismaFaltaRepository implements FaltaRepository {
   private prisma = prisma;
@@ -34,6 +34,19 @@ export class PrismaFaltaRepository implements FaltaRepository {
       let found = await this.prisma.falta.findMany({
         where: {
           aluno_id: id,
+        },
+      });
+      return found;
+    } catch (err) {
+      throw new Error(err);
+    }
+  }
+
+  async resgataPorIdAula(id: string): Promise<FaltaModel.Model[]> {
+    try {
+      let found = await this.prisma.falta.findMany({
+        where: {
+          aula_id: id,
         },
       });
       return found;
