@@ -53,7 +53,7 @@ Este projeto tem como objetivo desenvolver um sistema de gerenciamento de faltas
 
 # Modelo de domínio
 
-https://drive.google.com/file/d/16co08C-lQb6JEBMYuNdWyCcqQEyP5Rfz/view?usp=sharing
+https://drive.google.com/file/d/1RbxvXifEqMkDDjN_OXI5WNnq0X5AMedc/view?usp=sharing
 
 # Decisões de arquitetura
 
