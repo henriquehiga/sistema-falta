@@ -59,7 +59,7 @@ model Falta {
 
 model Aula {
   id              String     @id
-  dia_semana      Int @default(0)
+  dia_semana      Int        @default(0)
   professor_id    String
   professor_nome  String
   disciplina_id   String
