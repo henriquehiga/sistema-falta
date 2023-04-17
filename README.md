@@ -3,7 +3,7 @@
 
 # Projeto: Sistema de Faltas Escolares
 
-# Grupo: _<Nome_do_seu_Grupo>_
+# Grupo: Semente do Código
 
 # Descrição
 
