@@ -61,7 +61,7 @@ https://drive.google.com/file/d/1w3ytyZpov2YwlegYTej8NBbdUs0YnTGB/view?usp=shari
 
 # Diagrama de implantação
 
-https://drive.google.com/file/d/1w3ytyZpov2YwlegYTej8NBbdUs0YnTGB/view?usp=sharing
+
 
 # Referências
 
