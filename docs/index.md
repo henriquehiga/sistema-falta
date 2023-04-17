@@ -31,7 +31,7 @@ Este projeto tem como objetivo desenvolver um sistema de gerenciamento de faltas
 
 # Diagrama de casos de uso
 
-![Sistema de Falta](https://user-images.githubusercontent.com/89753145/232632559-8a235f96-a403-44f1-a16f-8a3baeb38e25.jpg)
+![Sistema de Falta](https://user-images.githubusercontent.com/89753145/232635073-2c48705d-8833-4be8-9315-ce4b02c86a53.jpg)
 
 
 # Descrição dos casos de uso
@@ -53,7 +53,7 @@ Este projeto tem como objetivo desenvolver um sistema de gerenciamento de faltas
 
 # Modelo de domínio
 
-https://drive.google.com/file/d/1RbxvXifEqMkDDjN_OXI5WNnq0X5AMedc/view?usp=sharing
+https://drive.google.com/file/d/16co08C-lQb6JEBMYuNdWyCcqQEyP5Rfz/view?usp=sharing
 
 # Decisões de arquitetura
 
@@ -61,7 +61,7 @@ https://drive.google.com/file/d/1w3ytyZpov2YwlegYTej8NBbdUs0YnTGB/view?usp=shari
 
 # Diagrama de implantação
 
-
+_&lt;Diagrama de implantação&gt;_
 
 # Referências
 
