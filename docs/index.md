@@ -31,7 +31,8 @@ Este projeto tem como objetivo desenvolver um sistema de gerenciamento de faltas
 
 # Diagrama de casos de uso
 
-![Diagrama Sistema de Falta](https://user-images.githubusercontent.com/89753145/219905304-3c80ff84-b217-4c40-986f-58bcc4233576.jpg)
+![Sistema de Falta](https://user-images.githubusercontent.com/89753145/232632559-8a235f96-a403-44f1-a16f-8a3baeb38e25.jpg)
+
 
 # Descrição dos casos de uso
 ![Descrição Caso de Uso_page-0001](https://user-images.githubusercontent.com/89753145/219905395-577b006e-1dd1-47fa-a27d-4de72edcd080.jpg)
