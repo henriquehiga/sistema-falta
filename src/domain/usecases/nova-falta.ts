@@ -7,6 +7,7 @@ import { Either, left, right } from "../../shared/either";
 import { ErrorResponse } from "../../shared/error-response";
 import { Falta } from "../entities/falta";
 import { FaltaModel } from "../entities/models/falta-model";
+import { NotificaLimiteFaltas } from "./notifica-limite-faltas";
 import { NovaFaltaUsecaseProtocol } from "./protocols/nova-falta-usecase-protocol";
 import { ResgataFaltasAlunoUsecaseProtocol } from "./protocols/resgata-faltas-aluno-protocol";
 
@@ -16,7 +17,8 @@ export class NovaFalta implements NovaFaltaUsecaseProtocol {
     private readonly aulaRepo: AulaRepository,
     private readonly alunoRepo: AlunoRepository,
     private readonly disciplinaRepo: DisciplinaRepository,
-    private readonly resgataFaltasAlunoUsecase: ResgataFaltasAlunoUsecaseProtocol
+    private readonly resgataFaltasAlunoUsecase: ResgataFaltasAlunoUsecaseProtocol,
+    private readonly notificaLimiteFalta: NotificaLimiteFaltas
   ) {}
 
   async execute(
@@ -65,6 +67,7 @@ export class NovaFalta implements NovaFaltaUsecaseProtocol {
         });
         let porcentagemCriticaFaltas = disciplina.qtd_aulas * 0.65;
         if (qtdFaltasDisciplinaSemestre >= porcentagemCriticaFaltas) {
+          this.notificaLimiteFalta.execute(alunoEncontrado.nome)
           console.log(
             "Perigo! O Aluno possui " + qtdFaltasDisciplinaSemestre + " faltas."
           );
