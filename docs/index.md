@@ -53,7 +53,7 @@ Este projeto tem como objetivo desenvolver um sistema de gerenciamento de faltas
 
 # Modelo de domínio
 
-https://drive.google.com/file/d/1QTojYMRdbnGwaUUY1gujhzxh9IwM9KKk/view?usp=sharing
+https://github.com/codehiga/sistema-falta/blob/develop/docs/Diagrama%20de%20Dom%C3%ADnio.drawio.png
 
 # Decisões de arquitetura 
 
