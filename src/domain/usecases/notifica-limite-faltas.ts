@@ -17,7 +17,11 @@ export class NotificaLimiteFaltas {
         " atingiu limite de faltas. Possui " +
         qtdFaltas +
         " faltas.";
-      this.mailer.enviar(emailResponsavel, "Atingiu faltas limite", message);
+      await this.mailer.enviar(
+        emailResponsavel,
+        "Atingiu faltas limite",
+        message
+      );
       return right(null);
     } catch (error) {
       return left({
