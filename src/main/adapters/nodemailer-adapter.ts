@@ -5,20 +5,19 @@ export class NodemailerAdapter {
     let transporter = nodemailer.createTransport({
       host: "smtp.hostinger.com",
       port: 465,
-      secure: true, // true for 465, false for other ports
+      secure: true,
       auth: {
-        user: "desenvolvimento@daikokurh.com.br", // generated ethereal user
-        pass: "Desenvolv!ment0", // generated ethereal password
+        user: "desenvolvimento@daikokurh.com.br",
+        pass: "Desenvolv!ment0",
       },
     });
 
-    // send mail with defined transport object
-    let info = await transporter.sendMail({
-      from: "desenvolvimento@daikokurh.com.br", // sender address
-      to: to, // list of receivers
-      subject: subject, // Subject line
-      text: message, // plain text body
-      html: "<b>" + message + "</b>", // html body
+    await transporter.sendMail({
+      from: "desenvolvimento@daikokurh.com.br",
+      to,
+      subject,
+      text: message,
+      html: "<b>" + message + "</b>",
     });
   }
 }
