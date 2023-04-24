@@ -55,9 +55,36 @@ Este projeto tem como objetivo desenvolver um sistema de gerenciamento de faltas
 
 https://drive.google.com/file/d/1QTojYMRdbnGwaUUY1gujhzxh9IwM9KKk/view?usp=sharing
 
-# Decisões de arquitetura
+# Decisões de arquitetura 
 
-https://docs.google.com/document/d/1W-kRfafFMkZZ9Dxj7f7jlksOBkK5uUTfcavTZ2P8Akk/edit?usp=sharing
+## Nome do Grupo: Semente do Código 
+
+## Integrantes: 
+
+Beatriz Vieira, 32118929 
+Henrique Higa, 32154021 
+Letícia Silva, 32157842 
+Vinícius Figueiredo, 32148801 
+
+
+## Descrição: 
+O Sistema será desenvolvido na linguagem NodeJS em Typescript para a parte do BackEnd. Já o FrontEnd será desenvolvido com ReactJS e SaSS. Para o versionamento do código utilizaremos o Git. No armazenamento dos dados utilizaremos o PostgreSQL. Teremos implementado um conjunto de funcionalidades que permitirão ao usuário a ação de poder controlar a frequência dos alunos de uma determinada escola. E utilizaremos um software de testes. 
+
+
+## Entidades: 
+A estrutura do projeto conta com Aluno, Falta, Aula, Professor e Disciplina! Aluno: id, nome, email_responsavel, turma_id. 
+Professor: id, nome. 
+Disciplina: id, nome, qtd_aulas. 
+Aula: id, professor_id, disciplina_id. 
+Falta: id, aluno_id, aula_id, data. 
+Turma: id, nome.
+
+## Relacionamentos: 
+O Professor e a Disciplina estão diretamente relacionados à Aula. Portanto, a Aula está relacionada com a Falta, igualmente ao Aluno. 
+
+## Design: 
+Será desenvolvido um protótipo para que a visualização do projeto seja esclarecedora em relação ao seu funcionamento, fazendo com que os elementos para efeitos de tela, sejam bem posicionados e escolhidos em relação ao tipo de sistema que estamos trabalhando!
+
 
 # Diagrama de implantação
 
