@@ -35,6 +35,16 @@ Este projeto tem como objetivo desenvolver um sistema de gerenciamento de faltas
 
 
 # Descrição dos casos de uso
+| Identificação      | Gerenciar Faltas                                        |
+|--------------------|---------------------------------------------------------|
+| UC 01              | Estabelecer marcação de faltas                          |
+| Ator               | Professor                                               |
+| Entradas           | Categoria escolhida para aplicação de faltas acadêmicas |
+| Fluxo Alternativo  | Não Existente                                           |
+| Pontos de Inclusão | 1 Existente                                             |
+| Pontos de Extensão | 1 Existente                                             |
+| Pré-Condições      | O Aluno não deverá faltar, está com excesso de faltas   |
+
 ![Descrição Caso de Uso_page-0001](https://user-images.githubusercontent.com/89753145/219905395-577b006e-1dd1-47fa-a27d-4de72edcd080.jpg)
 ![Descrição Caso de Uso_page-0002](https://user-images.githubusercontent.com/89753145/219905398-2c4aeaf6-3812-466a-9728-af68e80285c4.jpg)
 ![Descrição Caso de Uso_page-0004](https://user-images.githubusercontent.com/89753145/219905399-ca3e750f-6580-43e3-ae10-5d5e5236c59d.jpg)
