@@ -31,7 +31,7 @@ Este projeto tem como objetivo desenvolver um sistema de gerenciamento de faltas
 
 # Diagrama de casos de uso
 
-![Sistema de Falta](https://user-images.githubusercontent.com/89753145/232635073-2c48705d-8833-4be8-9315-ce4b02c86a53.jpg)
+https://github.com/codehiga/sistema-falta/blob/develop/docs/img/Diagrama%20de%20Casos%20de%20Uso.jpg 
 
 
 # Descrição dos casos de uso
