@@ -33,22 +33,63 @@ Este projeto tem como objetivo desenvolver um sistema de gerenciamento de faltas
 
 https://github.com/codehiga/sistema-falta/blob/develop/docs/img/Diagrama%20de%20Casos%20de%20Uso.jpg 
 
+|                                  Identificação                                  |                                                                                                                Gerenciar Faltas                                                                                                               |
+|:-------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| UC 01                                                                           | Categoria escolhida para aplicação de faltas acadêmicas                                                                                                                                                                                       |
+| Ator                                                                            | Professor                                                                                                                                                                                                                                     |
+| Fluxo Alternativo                                                               | Há Existente                                                                                                                                                                                                                                  |
+| Pontos de Exceção                                                               | Se ocorrer um erro durante o registro da presença, o professor deve tentar novamente ou entrar em contato com o suporte técnico.                                                                                                              |
+| Pré-Condições                                                                   | O professor deve ter acesso ao sistema de gerenciamento de faltas e a lista de alunos matriculados no curso.                                                                                                                                  |
+| Pós-Condições                                                                   | As informações sobre a frequência dos alunos e as comunicações com os alunos ausentes devem ser atualizadas no sistema.                                                                                                                       |
+| Requisitos Não Funcionais                                                       | O sistema de gerenciamento de faltas deve ser seguro, confiável e fácil de usar. O professor deve ter acesso ao sistema em tempo real, a qualquer momento do curso. O sistema deve ser capaz de lidar com um grande número de alunos e aulas. |
+| **FLUXO PRINCIPAL**                                                             |                                                                                                                  **--------**                                                                                                                 |
+| _Ações do Ator_                                                                 | _Ações do Sistema_                                                                                                                                                                                                                            |
+| 1. Realiza o login no sistema selecionando seu nome e cargo.                    | 2. Valida os dados preenchidos.                                                                                                                                                                                                               |
+| 3. Acessa o gerenciamento de faltas.                                            |                                                                                                                                                                                                                                               |
+| 4. Seleciona a turma na qual deseja gerenciar as faltas.                        |                                                                                                                                                                                                                                               |
+| 5. Visualiza a lista de alunos matriculados na turma.                           |                                                                                                                                                                                                                                               |
+| 6. Seleciona o aluno que receberá a falta desejada.                             |                                                                                                                                                                                                                                               |
+| 7. Indica o tipo de falta (justificada ou não justificada) e a data da falta.   |                                                                                                                                                                                                                                               |
+| 8. Submete o registro de falta.                                                 | 9. Armazena os dados preenchidos.                                                                                                                                                                                                             |
+| 10. Repete os passos 6 a 8 para cada aluno que faltou.                          |                                                                                                                                                                                                                                               |
+|                                                                                 | 11. Imprimi na tela "Faltas inseridas com sucesso!"                                                                                                                                                                                           |
+| 12. Finaliza o gerenciamento de faltas.                                         |                                                                                                                                                                                                                                               |
+| **FLUXO ALTERNATIVO - EDIÇÃO DE FALTA REGISTRADA INCORRETAMENTE**               |                                                                                                                  **--------**                                                                                                                 |
+| _Ações do Ator_                                                                 | _Ações do Sistema_                                                                                                                                                                                                                            |
+| 1. Acessa o gerenciamento de faltas.                                            |                                                                                                                                                                                                                                               |
+| 2. Seleciona a turma na qual deseja gerenciar as faltas.                        |                                                                                                                                                                                                                                               |
+| 3. Visualiza a lista de alunos matriculados na turma.                           |                                                                                                                                                                                                                                               |
+| 4. Seleciona o aluno cuja falta deseja editar.                                  |                                                                                                                                                                                                                                               |
+| 5. Seleciona a falta registrada incorretamente.                                 |                                                                                                                                                                                                                                               |
+| 6. Edita o tipo de falta (justificada ou não justificada) e/ou a data da falta. |                                                                                                                                                                                                                                               |
+| 7. Submete a edição da falta.                                                   | 8. Atualiza os dados da falta no sistema.                                                                                                                                                                                                     |
+|                                                                                 | 9. Imprimi na tela "Edição de Faltas realizadas com sucesso!".                                                                                                                                                                                |
+| 10. Finaliza a edição da falta.                                                 |                                                                                                                                                                                                                                               |
 
-# Descrição dos casos de uso
-| Identificação      | Gerenciar Faltas                                        |
-|--------------------|---------------------------------------------------------|
-| UC 01              | Estabelecer marcação de faltas                          |
-| Ator               | Professor                                               |
-| Entradas           | Categoria escolhida para aplicação de faltas acadêmicas |
-| Fluxo Alternativo  | Não Existente                                           |
-| Pontos de Inclusão | 1 Existente                                             |
-| Pontos de Extensão | 1 Existente                                             |
-| Pré-Condições      | O Aluno não deverá faltar, está com excesso de faltas   |
 
-![Descrição Caso de Uso_page-0001](https://user-images.githubusercontent.com/89753145/219905395-577b006e-1dd1-47fa-a27d-4de72edcd080.jpg)
-![Descrição Caso de Uso_page-0002](https://user-images.githubusercontent.com/89753145/219905398-2c4aeaf6-3812-466a-9728-af68e80285c4.jpg)
-![Descrição Caso de Uso_page-0004](https://user-images.githubusercontent.com/89753145/219905399-ca3e750f-6580-43e3-ae10-5d5e5236c59d.jpg)
-![Descrição Caso de Uso_page-0005](https://user-images.githubusercontent.com/89753145/219905401-3beaac34-63cc-402f-9649-18ab62c05a23.jpg)
+|              Identificação              |                                                       Recebe Notificação                                                       |
+|:---------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------:|
+|                  UC 02                  |                                      Categoria escolhida para recebimento de notificação.                                      |
+|                  Atores                 |                                                      Responsável do Aluno                                                      |
+|                Descrição                | O Responsável do Aluno recebe notificações sobre a situação acadêmica de seu filho,sobre excedimento do limite de 75% de falta |
+|              Pré-condições              |                                     O sistema deve estar conectado à internet e disponível                                     |
+|              Pós-condições              |                                           O Responsável do Aluno recebe a notificação                                          |
+| **FLUXO PRINCIPAL**                     |                                                           **-------**                                                          |
+|             _Ações do Ator_             |                                                       _Ações do Sistema_                                                       |
+|                                         |                                1. O sistema detecta que o aluno excedeu o limite de 75% de falta                               |
+|                                         |                                 2. O sistema envia uma notificação para o Responsável do Aluno                                 |
+|                                         |                                         3. O Responsável do Aluno recebe a notificação                                         |
+| 4. Recebe que há notificação disponível |                                                                                                                                |
+|           5. Acessa o sistema           |                                                                                                                                |
+|     6. Acessa a área de notificações    |                                                                                                                                |
+|       7. Visualiza as notificações      |                                                                                                                                |
+|       8. Seleciona uma notificação      |                                                                                                                                |
+|     9. Lê o conteúdo da notificação     |                                                                                                                                |
+|         10. Fecha a notificação         |                                                                                                                                |
+
+
+
+
 
 # Protótipos de tela
 
