@@ -278,7 +278,7 @@ Será desenvolvido um protótipo para que a visualização do projeto seja escla
 
 # Diagrama de implantação
 
-_&lt;Diagrama de implantação&gt;_
+[_&lt;Diagrama de implantação&gt;_](https://github.com/codehiga/sistema-falta/commit/e8c8b76ed88e77e290e4f49c27b519d060774911)
 
 # Referências
 
