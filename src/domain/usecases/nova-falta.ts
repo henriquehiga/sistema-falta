@@ -65,7 +65,7 @@ export class NovaFalta implements NovaFaltaUsecaseProtocol {
             qtdFaltasDisciplinaSemestre += 1;
           }
         });
-        let porcentagemCriticaFaltas = disciplina.qtd_aulas * 0.65;
+        let porcentagemCriticaFaltas = disciplina.qtd_aulas * 0.6;
         if (qtdFaltasDisciplinaSemestre >= porcentagemCriticaFaltas) {
           await this.notificaLimiteFalta.execute(
             alunoEncontrado.nome,
