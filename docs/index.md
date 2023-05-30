@@ -16,6 +16,7 @@ _&lt;Sistema faltas&gt;_
 - [Modelo de domínio](#modelo-de-domínio)
 - [Decisões de arquitetura](#decisões-de-arquitetura)
 - [Diagrama de implantação](#diagrama-de-implantação)
+- [Plano de Teste Cenários](#plano-de-teste)
 - [Referências](#referências)
 
 # Autores
@@ -282,6 +283,26 @@ Será desenvolvido um protótipo para que a visualização do projeto seja escla
 
 [_&lt;Diagrama de implantação&gt;_](https://github.com/codehiga/sistema-falta/commit/e8c8b76ed88e77e290e4f49c27b519d060774911)
 
+# Plano de Teste Cenários
+| Identificação única                                               | Gerenciar Faltas                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+|-------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Caso de uso em que se baseia                                      | Categoria escolhida para aplicação de faltas acadêmicas                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| Cenário                                                           | Fluxo principal                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| Preparação (descrição da condição do sistema no inicio do teste)  | O sistema está funcionando corretamente, o professor realizou o login com sucesso e tem acesso à lista de alunos matriculados na turma selecionada.                                                                                                                                                                                                                                                                                                                                                           |
+| Passos para a execução do teste                                   | [1] O professor acessa o sistema de gerenciamento de faltas. [2] O professor seleciona o curso para o qual deseja gerenciar as faltas. [3] O sistema exibe a lista de alunos matriculados no curso. [4] O professor marca as faltas dos alunos ausentes na data atual. [5] O professor salva as alterações feitas.                                                                                                                                                                                            |
+| Resultado esperado                                                | ➢ O sistema registra corretamente as faltas para cada aluno selecionado. ➢ A mensagem "Faltas inseridas com sucesso!" é exibida na tela. ➢ As informações sobre a frequência dos alunos, com os alunos ausentes são atualizadas no sistema.                                                                                                                                                                                                                                                                   |
+| Resultado do teste (para ser preenchido após a execução do teste) | 🔘 NÃO EXECUTADO 🟢 SUCESSO 🔘FALHA 🔘CANCELADO                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Descrição do resultado obtido                                     | Durante a execução do teste, todos os passos foram seguidos corretamente e o sistema registrou as faltas para cada aluno selecionado. A mensagem "Faltas inseridas com sucesso!" foi exibida na tela conforme esperado. Além disso, as informações sobre a frequência dos alunos e as comunicações com os alunos ausentes foram atualizadas corretamente no sistema. Todos os requisitos funcionais foram atendidos, e não foram observados erros ou problemas durante o processo de gerenciamento de faltas. |
+| Data da última execução do teste                                  | 29/05/2023  às 23:05hrs                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+
+
+
 # Referências
 
-_&lt;Lista de referências&gt;_
+_&lt;Lista de referências&gt;_ 
+Plano de Teste:
+SOMMERVILLE, I. Engenharia de software.
+10. ed. São Paulo: Pearson, 2018, cap. 8.
+
+https://cuboup.com/conteudo/plano-de-teste/
+
