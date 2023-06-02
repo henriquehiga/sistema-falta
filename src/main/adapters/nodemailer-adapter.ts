@@ -7,13 +7,13 @@ export class NodemailerAdapter {
       port: 465,
       secure: true,
       auth: {
-        user: "desenvolvimento@daikokurh.com.br",
+        user: "dev@daikokurh.com.br",
         pass: "Desenvolv!ment0",
       },
     });
 
     await transporter.sendMail({
-      from: "desenvolvimento@daikokurh.com.br",
+      from: "dev@daikokurh.com.br",
       to,
       subject,
       text: message,
