@@ -35,6 +35,10 @@ export class PrismaFaltaRepository implements FaltaRepository {
         where: {
           aluno_id: id,
         },
+        include: {
+          aula: true,
+          aluno: true,
+        },
       });
       return found;
     } catch (err) {

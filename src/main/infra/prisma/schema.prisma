@@ -25,6 +25,7 @@ model Aluno {
   turma_id          String
   turma_nome        String
   turma             Turma    @relation(fields: [turma_id, turma_nome], references: [id, nome])
+  falta             Falta[]
 
   @@map("aluno")
 }
@@ -53,6 +54,8 @@ model Falta {
   aluno_id String
   aula_id  String
   data     DateTime
+  aluno    Aluno    @relation(fields: [aluno_id], references: [id])
+  aula     Aula     @relation(fields: [aula_id], references: [id])
 
   @@map("falta")
 }
@@ -66,6 +69,7 @@ model Aula {
   disciplina_nome String
   turma_id        String
   turma_nome      String
+  falta           Falta[]
   disciplina      Disciplina @relation(fields: [disciplina_id, disciplina_nome], references: [id, nome])
   professor       Professor  @relation(fields: [professor_id, professor_nome], references: [id, nome])
   turma           Turma      @relation(fields: [turma_id, turma_nome], references: [id, nome])
